@@ -91,7 +91,7 @@ export const servicesData = [
       "Dirty solar panels lead to less efficient energy absorption — keep them clean and running to their full potential.",
   },
   {
-    name: "Seal Coating",
+    name: "Paver Sealing",
     icon: <SealCoatingIcon />,
     link: "seal_coating",
     description:
