@@ -4,6 +4,7 @@ import Link from "next/link";
 import { ChevronDown, Phone } from "lucide-react";
 import HeaderButton from "@/components/HeaderButton";
 import CitySelector from "./CitySelector"; // Import CitySelector for mobile use
+import PhoneNumber from "./PhoneNumber";
 
 const MobileNav = ({
   onServicesClick,
@@ -54,8 +55,9 @@ const MobileNav = ({
           <CitySelector onClick={onCitiesClick} isMobile={true} />
         </li>
         <li className="flex items-center gap-2 text-[#F3C99D]">
-          <Phone className="h-5 w-5 text-[#F3C99D]" strokeWidth={1.2} />
-          <span className="text-lg font-normal">954-852-5236</span>
+          {/* <Phone className="h-5 w-5 text-[#F3C99D]" strokeWidth={1.2} />
+          <span className="text-lg font-normal">954-852-5236</span> */}
+          <PhoneNumber />
         </li>
         <li className="mt-8 mb-32">
           <HeaderButton onClick={onQuoteClick} />
