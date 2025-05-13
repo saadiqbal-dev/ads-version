@@ -31,63 +31,63 @@ import sealCoating from "@/assets/homepageServices/seal_coating.webp";
 const services = [
   {
     name: "Exterior Windows",
-    link: "exterior_windows",
+    link: "exterior-windows",
     image: exteriorWindow,
     description:
       "It’s what we do best! Get rid of that nasty build-up of nature’s mildew and grime.",
   },
   {
     name: "Interior Windows",
-    link: "interior_windows",
+    link: "interior-windows",
     image: interiorWindow,
     description:
       "Pet slobber, fingerprints, and so much more can leave residue that is tricky to get off.",
   },
   {
     name: "Gutter Cleaning",
-    link: "gutter_cleaning",
+    link: "gutter-cleaning",
     image: gutterCleaning,
     description:
       "A thorough cleaning that is guaranteed to keep them flowing freely.",
   },
   {
     name: "House Washing",
-    link: "house_washing",
+    link: "house-washing",
     image: houseWashing,
     description:
       "Wash away years of pollen, mold, rust, and dirt – bringing that shine back to your property’s exterior.",
   },
   {
     name: "Roof Washing",
-    link: "roof_washing",
+    link: "roof-washing",
     image: roofWashing,
     description:
       "Removing all the debris from your roof is the easiest way to increase its longevity.",
   },
   {
     name: "Pressure & Soft Washing",
-    link: "pressure_washing",
+    link: "pressure-washing",
     image: pressureWashing,
     description:
       "Get rid of the slippery film and gunk on your driveway, walkways, porches, pool areas, and more.",
   },
   {
     name: "High Dusting",
-    link: "high_dusting",
+    link: "high-dusting",
     image: highDusting,
     description:
       "Eliminate the cobwebs and dust in those hard to reach corners.",
   },
   {
     name: "Light Fixtures",
-    link: "light_fixtures",
+    link: "light-fixtures",
     image: lightFixtures,
     description:
       "Keep both your interior and exterior lighting bright with thorough cleanings of your lanterns, sconces, and more.",
   },
   {
     name: "Screen Cleans",
-    link: "screen_cleans",
+    link: "screen-cleans",
     image: screenCleans,
     description:
       "We’ll happily remove, clean, and even replace your screens if necessary.",
@@ -101,14 +101,14 @@ const services = [
   },
   {
     name: "Solar Panels",
-    link: "solar_panels",
+    link: "solar-panels",
     image: solarPanels,
     description:
       "Dirty solar panels lead to less efficient energy absorption – keep them clean and running to their full potential. ",
   },
   {
     name: "Seal Coating",
-    link: "seal_coating",
+    link: "seal-coating",
     image: sealCoating,
     description:
       "Add a protective coating to your driveway/parking lot that protects against water, oils, and other damaging elements.",

@@ -125,7 +125,7 @@ const Footer = () => {
                   Our process
                 </Link>
                 <Link
-                  href={`/${cityKey}/holiday_light_installation` || "#holiday"}
+                  href={`/${cityKey}/holiday-light-installation` || "#holiday"}
                   className="font-['satoshi-regular'] text-base font-normal hover:underline md:text-sm"
                 >
                   Holiday lighting

@@ -98,7 +98,7 @@ const Services = () => {
               or business once, and you&apos;ll never want to go back to doing
               it yourself.
             </p>
-            <Link href={`/${cityKey}/holiday_light_installation`}>
+            <Link href={`/${cityKey}/holiday-light-installation`}>
               <Button className="trim flex h-auto cursor-pointer rounded-[6.32px] bg-white p-3 font-[satoshi-bold] text-sm text-[10px] text-[312E2C] hover:bg-white/80 md:px-4 md:py-[14px] md:text-sm">
                 What We Offer
               </Button>

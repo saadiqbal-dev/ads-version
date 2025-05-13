@@ -15,13 +15,13 @@ const steps = [
   {
     number: "01",
     title: "Screen Cleaning",
-    link: "screen_cleans",
+    link: "screen-cleans",
     Image: service10,
   },
   {
     number: "02",
     title: "Exterior Window Cleaning",
-    link: "exterior_windows",
+    link: "exterior-windows",
     Image: service2,
   },
   {
@@ -33,7 +33,7 @@ const steps = [
   {
     number: "04",
     title: "HIGH DUSTING",
-    link: "high_dusting",
+    link: "high-dusting",
     Image: service12,
   },
 ];

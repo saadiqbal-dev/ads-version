@@ -12,7 +12,7 @@ import service11 from "@/assets/serviceData/service11.webp";
 import service12 from "@/assets/serviceData/service12.webp";
 
 const Services = {
-  solar_panels: {
+  "solar-panels": {
     hero: [
       "Solar Panel",
       "Cleaning",
@@ -93,7 +93,7 @@ const Services = {
     quote:
       "Maximize energy Efficiency with our professional solar panel cleaning services.",
   },
-  exterior_windows: {
+  "exterior-windows": {
     hero: [
       "Exterior Window",
       "Cleaning",
@@ -179,7 +179,7 @@ const Services = {
     quote:
       "Maximize energy Efficiency with our professional solar panel cleaning services.",
   },
-  interior_windows: {
+  "interior-windows": {
     hero: [
       "Interior Window",
       "Cleaning",
@@ -250,7 +250,7 @@ const Services = {
     quote:
       "Maximize energy Efficiency with our professional solar panel cleaning services.",
   },
-  gutter_cleaning: {
+  "gutter-cleaning": {
     hero: [
       "Gutter",
       "Cleaning",
@@ -321,7 +321,7 @@ const Services = {
     quote:
       "Maximize energy Efficiency with our professional solar panel cleaning services.",
   },
-  house_washing: {
+  "house-washing": {
     hero: [
       "House",
       "Washing",
@@ -402,7 +402,7 @@ const Services = {
     quote:
       "Maximize energy Efficiency with our professional solar panel cleaning services.",
   },
-  roof_washing: {
+  "roof-washing": {
     hero: [
       "Roof",
       "Washing",
@@ -481,7 +481,7 @@ const Services = {
       },
     ],
   },
-  pressure_washing: {
+  "pressure-washing": {
     hero: [
       "Pressure",
       "Washing",
@@ -491,7 +491,7 @@ const Services = {
     included: [
       {
         number: "01",
-        title: "Pressure Washingfor Hard SurfaceS",
+        title: "Pressure Washing for Hard Surfaces",
         text: "emoves grime, algae, and stains from driveways, sidewalks, patios, and decks.",
       },
       {
@@ -560,7 +560,7 @@ const Services = {
       },
     ],
   },
-  seal_coating: {
+  "seal-coating": {
     hero: [
       "Paver",
       "Sealing",
@@ -639,7 +639,7 @@ const Services = {
       },
     ],
   },
-  light_fixtures: {
+  "light-fixtures": {
     hero: [
       "Light Fixture",
       "Cleaning",
@@ -718,7 +718,7 @@ const Services = {
       },
     ],
   },
-  screen_cleans: {
+  "screen-cleans": {
     hero: [
       "Screen",
       "Cleaning",
@@ -876,7 +876,7 @@ const Services = {
       },
     ],
   },
-  holiday_light_installation: {
+  "holiday-light-installation": {
     hero: [
       "Holiday Light",
       "Installation",
@@ -955,7 +955,7 @@ const Services = {
       },
     ],
   },
-  high_dusting: {
+  "high-dusting": {
     hero: [
       "High",
       "Dusting",
