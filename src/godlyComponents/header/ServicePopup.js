@@ -1,5 +1,5 @@
 // src/godlyComponents/header/ServicePopup.js
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import {
@@ -11,11 +11,29 @@ import {
 import { cn } from "@/lib/utils";
 import { useGodlyContext } from "@/context/godlyContext";
 import { citiesMap } from "./CitiesPopup";
+import { usePathname } from "next/navigation";
 
 const ServicePopup = ({ open, onOpenChange, services }) => {
   const { city } = useGodlyContext();
+  // Add state to track active/touched item on mobile
+  const [activeIndex, setActiveIndex] = useState(null);
+  const pathname = usePathname();
 
-  const cityKey = Object.keys(citiesMap).find((key) => citiesMap[key] === city);
+  // Get city directly from URL
+  const getCityFromUrl = () => {
+    if (pathname) {
+      const pathSegments = pathname.split("/");
+      if (pathSegments.length > 1 && pathSegments[1]) {
+        return pathSegments[1];
+      }
+    }
+    return (
+      Object.keys(citiesMap).find((key) => citiesMap[key] === city) ||
+      "south-florida"
+    );
+  };
+
+  const cityKey = getCityFromUrl();
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange} className="">
@@ -32,29 +50,42 @@ const ServicePopup = ({ open, onOpenChange, services }) => {
               href={`/${cityKey}/${service.link}`}
               key={index}
               className={cn(
-                "group border-b-[1.5px] border-[#8d8477] hover:bg-[#2D2B2B]",
+                "group border-b-[1.5px] border-[#8d8477] hover:bg-[#2D2B2B] active:bg-[#2D2B2B]",
                 index % 1 === 0 ? "md:mx-[20px]" : "",
+                activeIndex === index ? "bg-[#2D2B2B]" : "",
               )}
               onClick={() => {
                 onOpenChange(false);
-              }} // Close popup on link click
+              }}
+              onTouchStart={() => setActiveIndex(index)}
+              onTouchEnd={() => setActiveIndex(null)}
             >
-              <div
-                key={index} // Consider removing duplicate key if Link key is sufficient
-                className="flex min-h-18 flex-row items-start gap-[6px] gap-y-0 p-2 text-[#2D2B2B] transition-all group-hover:text-[#FDE4C8]"
-              >
+              <div className="flex min-h-18 flex-row items-start gap-[6px] gap-y-0 p-2 text-[#2D2B2B] transition-all group-hover:text-[#FDE4C8] group-active:text-[#FDE4C8]">
                 <Image
                   src={service.image}
                   alt={service.name}
                   width={27}
                   height={27}
-                  className="size-[27px] object-contain group-hover:filter-[invert(1)]"
+                  className={cn(
+                    "size-[27px] object-contain group-hover:filter-[invert(1)]",
+                    activeIndex === index ? "filter-[invert(1)]" : "",
+                  )}
                 />
                 <div className="flex flex-col gap-[6px]">
-                  <h3 className="text-sm leading-tight font-normal">
+                  <h3
+                    className={cn(
+                      "text-sm leading-tight font-normal",
+                      activeIndex === index ? "text-[#FDE4C8]" : "",
+                    )}
+                  >
                     {service.name}
                   </h3>
-                  <p className="font-['satoshi-light'] text-xs font-light">
+                  <p
+                    className={cn(
+                      "font-['satoshi-light'] text-xs font-light",
+                      activeIndex === index ? "text-[#FDE4C8]" : "",
+                    )}
+                  >
                     {service.description}
                   </p>
                 </div>

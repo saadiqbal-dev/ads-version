@@ -1,5 +1,5 @@
 // src/godlyComponents/header/CitiesPopup.js
-import React from "react";
+import React, { useState } from "react";
 import { MapPin } from "lucide-react";
 import {
   Dialog,
@@ -43,6 +43,8 @@ export const citiesMap = {
 const CitiesPopup = ({ open, onOpenChange }) => {
   const { setCity } = useGodlyContext();
   const router = useRouter();
+  // Add state to track active/touched item on mobile
+  const [activeIndex, setActiveIndex] = useState(null);
 
   const pathname = usePathname();
   const isServicePage = pathname.split("/").length === 3;
@@ -63,8 +65,9 @@ const CitiesPopup = ({ open, onOpenChange }) => {
               <div
                 key={index}
                 className={cn(
-                  "group flex cursor-pointer flex-col gap-1 border-b-1 border-[#8d8477] py-1 transition-all hover:bg-[#2D2B2B]",
+                  "group flex cursor-pointer flex-col gap-1 border-b-1 border-[#8d8477] py-1 transition-all hover:bg-[#2D2B2B] active:bg-[#2D2B2B]",
                   index % 1 === 0 ? "md:mx-[20px]" : "",
+                  activeIndex === index ? "bg-[#2D2B2B]" : "",
                 )}
                 onClick={() => {
                   setCity(citiesMap[cityName]);
@@ -76,13 +79,23 @@ const CitiesPopup = ({ open, onOpenChange }) => {
                   }
                   onOpenChange(false);
                 }}
+                onTouchStart={() => setActiveIndex(index)}
+                onTouchEnd={() => setActiveIndex(null)}
               >
                 <div className="flex items-center justify-start gap-3">
                   <MapPin
-                    className="shrink-0 group-hover:filter-[invert(1)]"
+                    className={cn(
+                      "shrink-0 group-hover:filter-[invert(1)]",
+                      activeIndex === index ? "filter-[invert(1)]" : "",
+                    )}
                     size={20}
                   />
-                  <h3 className="text-xs leading-tight font-normal text-[#2D2B2B] group-hover:text-[#FDE4C8]">
+                  <h3
+                    className={cn(
+                      "text-xs leading-tight font-normal text-[#2D2B2B] group-hover:text-[#FDE4C8] group-active:text-[#FDE4C8]",
+                      activeIndex === index ? "text-[#FDE4C8]" : "",
+                    )}
+                  >
                     {citiesMap[cityName]}
                   </h3>
                 </div>

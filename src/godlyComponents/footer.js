@@ -9,9 +9,9 @@ import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { useGodlyContext } from "@/context/godlyContext";
 import { citiesMap } from "./header/CitiesPopup";
+import { usePathname } from "next/navigation";
 
 const getAddress = (city) => {
-  // const getAddress = () => {
   const cityToCheck = city.toUpperCase();
 
   if (
@@ -32,41 +32,47 @@ const getAddress = (city) => {
 export const getPhoneNumber = (city) => {
   const cityToCheck = city.toUpperCase();
 
-  // Boca Raton, West Palm Beach, Delray, Royal Palm Beach
   if (
     ["BOCA RATON", "WEST PALM BEACH", "DELRAY", "ROYAL PALM BEACH"].includes(
       cityToCheck,
     )
   ) {
     return "561-826-4461";
-  }
-  // Coral Springs, Parkland, Sunrise, Margate, Tamarac
-  else if (
+  } else if (
     ["CORAL SPRINGS", "PARKLAND", "SUNRISE", "MARGATE", "TAMARAC"].includes(
       cityToCheck,
     )
   ) {
     return "954-856-2066";
-  }
-  // Weston, Southwest Ranches, Pembroke Pines
-  else if (
+  } else if (
     ["WESTON", "SOUTHWEST RANCHES", "PEMBROKE PINES"].includes(cityToCheck)
   ) {
     return "954-738-3421";
-  }
-  // Default phone number for all other cities
-  else {
+  } else {
     return "954-852-5236";
   }
 };
 
 const Footer = () => {
   const { city } = useGodlyContext();
+  const pathname = usePathname();
 
+  const getCityFromUrl = () => {
+    if (pathname) {
+      const pathSegments = pathname.split("/");
+      if (pathSegments.length > 1 && pathSegments[1]) {
+        return pathSegments[1];
+      }
+    }
+    return (
+      Object.keys(citiesMap).find((key) => citiesMap[key] === city) ||
+      "south-florida"
+    );
+  };
+
+  const urlCityKey = getCityFromUrl();
   const phoneNumber = getPhoneNumber(city);
   const address = getAddress(city);
-
-  const cityKey = Object.keys(citiesMap).find((key) => citiesMap[key] === city);
 
   return (
     <div className="w-full flex-col bg-[#312E2C] md:flex">
@@ -78,26 +84,6 @@ const Footer = () => {
         >
           <div className="flex flex-col items-start justify-between md:flex-row">
             <div className="flex w-full items-start justify-between md:flex-row md:justify-start md:gap-30">
-              {/* Left: Information */}
-              {/* <div className="flex flex-col gap-2">
-                <h3 className="font-normal tracking-[0.64px] text-[#312E2C] uppercase opacity-60 md:opacity-100">
-                  Information
-                </h3>
-                <Link
-                  href="#faq"
-                  className="font-['satoshi-regular'] text-sm font-normal hover:underline"
-                >
-                  FAQ
-                </Link>
-                 <Link
-                  href="/blogs"
-                  className="font-['satoshi-regular'] text-sm font-normal hover:underline"
-                >
-                  Blog
-                </Link>
-              </div> */}
-
-              {/* Center: Menu */}
               <div className="flex flex-col gap-2">
                 <h3 className="font-normal tracking-[0.64px] text-[#312E2C] uppercase opacity-60 md:opacity-100">
                   Menu
@@ -127,7 +113,7 @@ const Footer = () => {
                   Our process
                 </Link>
                 <Link
-                  href={`/${cityKey}/holiday-light-installation` || "#holiday"}
+                  href={`/${urlCityKey}/holiday-light-installation`}
                   className="font-['satoshi-regular'] text-base font-normal hover:underline md:text-sm"
                 >
                   Holiday lighting
@@ -135,7 +121,6 @@ const Footer = () => {
               </div>
             </div>
 
-            {/* Right: Contact Info */}
             <div className="hidden flex-col gap-2 text-right md:flex md:items-end">
               <p className="font-['satoshi-regular'] text-lg font-normal">
                 <Link href={`tel:${phoneNumber}`}>{phoneNumber}</Link>
@@ -159,8 +144,6 @@ const Footer = () => {
               </div>
             </div>
             <div className="font-['satoshi-regular'] text-sm font-normal text-[#312E2C]">
-              {/* <p>1901 Thornridge Cir. Shiloh,</p>
-              <p>Hawaii 81063</p> */}
               <p>{address.split(",")[0]}</p>
               <p>{address.split(",")[1]}</p>
             </div>
