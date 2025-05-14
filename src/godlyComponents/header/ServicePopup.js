@@ -26,7 +26,7 @@ const ServicePopup = ({ open, onOpenChange, services }) => {
         hideCloseButton
         className="paper-bg-16 z-100 overflow-y-auto border-none bg-[#fff9f3] p-4 md:top-[280px] md:max-w-[1045px] md:p-6"
       >
-        <div className="md:max-h-auto grid max-h-[calc(100vh-256px)] w-full grid-cols-1 sm:grid-cols-2 md:max-h-[calc(100vh-128px)] lg:grid-cols-3">
+        <div className="md:max-h-auto grid max-h-[calc(100vh-256px)] w-full grid-cols-2 sm:grid-cols-2 md:max-h-[calc(100vh-128px)] lg:grid-cols-3">
           {services.map((service, index) => (
             <Link
               href={`/${cityKey}/${service.link}`}
