@@ -55,7 +55,7 @@ export const metadata = {
     type: "website",
     images: [
       {
-        url: "/Thumbnail.png",
+        url: "/assets/Thumbnail.png",
         width: 1200,
         height: 630,
         alt: "Godly Windows - Professional Window & Exterior Cleaning Services",
@@ -67,7 +67,7 @@ export const metadata = {
     title: "Godly Windows | Professional Window & Exterior Cleaning",
     description:
       "South Florida's premier window cleaning and exterior home service.",
-    images: ["/Thumbnail.png"],
+    images: ["/assets/Thumbnail.png"],
     creator: "@godlywindows",
   },
   icons: {
