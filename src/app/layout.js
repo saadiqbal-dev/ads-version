@@ -20,7 +20,7 @@ const inter = Inter({
 });
 
 export const metadata = {
-  title: "Godly Windows | Professional Window & Exterior Cleaning",
+  title: "Godly Windows & Wash Co.",
   description:
     "South Florida's premier window cleaning and exterior home service. Professional quality with exceptional customer service.",
   generator: "Next.js",
@@ -46,7 +46,7 @@ export const metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "Godly Windows | Professional Window & Exterior Cleaning",
+    title: "Godly Windows & Wash Co.",
     description:
       "South Florida's premier window cleaning and exterior home service. Professional quality with exceptional customer service.",
     url: "https://godlywindows.com",
@@ -64,7 +64,7 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Godly Windows | Professional Window & Exterior Cleaning",
+    title: "Godly Windows & Wash Co.",
     description:
       "South Florida's premier window cleaning and exterior home service.",
     images: ["/assets/Thumbnail.png"],
