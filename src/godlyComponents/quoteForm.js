@@ -241,7 +241,7 @@ export default function QuoteForm({ isDialog }) {
                 e.preventDefault();
                 setShowServices(!showServices);
               }}
-              className="w-full rounded-none border-t-0 border-r-0 border-b-1 border-l-0 border-black bg-transparent px-0 pb-3 text-base focus-visible:ring-0 md:text-xl xl:text-2xl"
+              className="w-full rounded-none border-t-0 border-r-0 border-b-1 border-l-0 border-black bg-transparent px-0 pb-[15px] text-base focus-visible:ring-0 md:text-xl xl:text-2xl"
             >
               <div className="flex w-full items-center space-x-2">
                 <p className="overflow-hidden text-ellipsis whitespace-nowrap">
@@ -351,7 +351,7 @@ export default function QuoteForm({ isDialog }) {
           </div>
 
           <div className="md:col-span-1 xl:col-span-2">
-            <label className="mb-1 block pb-2 font-sans text-sm font-normal text-[#312E2C] md:text-sm xl:text-base">
+            <label className="mb-1 block w-full pb-3 font-sans text-sm font-normal text-[#312E2C] md:text-sm xl:text-base">
               Zip Code
             </label>
             <Input
@@ -359,7 +359,7 @@ export default function QuoteForm({ isDialog }) {
               placeholder="YOUR ZIP CODE"
               value={formData.zipcode}
               onChange={handleChange}
-              className="rounded-none border-t-0 border-r-0 border-b-1 border-l-0 border-black bg-transparent px-0 pb-3 text-base focus-visible:ring-0 md:text-xl xl:text-2xl"
+              className="w-full rounded-none border-t-0 border-r-0 border-b-1 border-l-0 border-black bg-transparent px-0 pb-3 text-base focus-visible:ring-0 md:text-xl xl:text-2xl"
               required
             />
           </div>
