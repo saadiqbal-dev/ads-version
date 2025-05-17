@@ -47,7 +47,7 @@ const TeamGallery = () => {
           }}
           className="trim z-10 -mt-4 text-center font-['luminaire-script'] text-[27px] font-normal tracking-[2.419px] text-white md:-mt-8 md:text-[64px] md:tracking-[5.76px]"
         >
-          Reimagimaded
+          Reimagined
         </p>
       </div>
 
