@@ -15,17 +15,36 @@ const getAddress = (city) => {
   const cityToCheck = city.toUpperCase();
 
   if (
-    ["BOCA RATON", "WEST PALM BEACH", "DELRAY", "ROYAL PALM BEACH"].includes(
-      cityToCheck,
-    )
+    [
+      "POMPANO BEACH",
+      "FORT LAUDERDALE",
+      "HOLLYWOOD",
+      "OAKLAND PARK",
+      "SUNRISE",
+      "LIGHTHOUSE POINT",
+      "LAUDERDALE-BY-THE-SEA",
+    ].includes(cityToCheck)
+  ) {
+    return "3315 E. Oakland Park Blvd. Suite 204, Ft. Lauderdale, FL 33308";
+  } else if (
+    [
+      "WEST PALM BEACH",
+      "DELRAY BEACH",
+      "BOCA RATON",
+      "TAMARAC",
+      "MARGATE",
+      "CORAL SPRINGS",
+      "PARKLAND",
+      "ROYAL PALM BEACH",
+      "DEERFIELD BEACH",
+      "HILLSBORO BEACH",
+    ].includes(cityToCheck)
   ) {
     return "491 W Camino Real, Boca Raton, FL 33432";
-  } else if (
-    ["WESTON", "SOUTHWEST RANCHES", "PEMBROKE PINES"].includes(cityToCheck)
-  ) {
-    return "2800 Glades Cir Suite 106, Weston, FL 33327";
+  } else if ("SOUTH FLORIDA" === cityToCheck) {
+    return "";
   } else {
-    return "1901 Thornridge Cir. Shiloh, Hawaii 81063";
+    return "2800 Glades Cir Suite 106, Weston, FL 33327";
   }
 };
 
@@ -33,23 +52,34 @@ export const getPhoneNumber = (city) => {
   const cityToCheck = city.toUpperCase();
 
   if (
-    ["BOCA RATON", "WEST PALM BEACH", "DELRAY", "ROYAL PALM BEACH"].includes(
-      cityToCheck,
-    )
+    [
+      "POMPANO BEACH",
+      "FORT LAUDERDALE",
+      "HOLLYWOOD",
+      "OAKLAND PARK",
+      "SUNRISE",
+      "LIGHTHOUSE POINT",
+      "LAUDERDALE-BY-THE-SEA",
+    ].includes(cityToCheck)
   ) {
-    return "561-826-4461";
+    return "(954) 852-5326";
   } else if (
-    ["CORAL SPRINGS", "PARKLAND", "SUNRISE", "MARGATE", "TAMARAC"].includes(
-      cityToCheck,
-    )
+    [
+      "WEST PALM BEACH",
+      "DELRAY BEACH",
+      "BOCA RATON",
+      "TAMARAC",
+      "MARGATE",
+      "CORAL SPRINGS",
+      "PARKLAND",
+      "ROYAL PALM BEACH",
+      "DEERFIELD BEACH",
+      "HILLSBORO BEACH",
+    ].includes(cityToCheck)
   ) {
-    return "954-856-2066";
-  } else if (
-    ["WESTON", "SOUTHWEST RANCHES", "PEMBROKE PINES"].includes(cityToCheck)
-  ) {
-    return "954-738-3421";
+    return "(561) 826-4461";
   } else {
-    return "954-852-5236";
+    return "(954) 738-3421";
   }
 };
 
@@ -146,6 +176,7 @@ const Footer = () => {
             <div className="font-['satoshi-regular'] text-sm font-normal text-[#312E2C]">
               <p>{address.split(",")[0]}</p>
               <p>{address.split(",")[1]}</p>
+              <p>{address.split(",")[2]}</p>
             </div>
           </div>
         </div>

@@ -1,4 +1,5 @@
 // src/godlyComponents/header/CitiesPopup.js
+"use client";
 import React, { useState } from "react";
 import { MapPin } from "lucide-react";
 import {
@@ -60,7 +61,7 @@ const CitiesPopup = ({ open, onOpenChange }) => {
       >
         <div className="xs:grid-cols-2 grid max-h-[calc(100vh-256px)] w-full grid-cols-2 gap-1 gap-y-4 sm:grid-cols-3 md:max-h-[calc(100vh-128px)] md:grid-cols-4 lg:grid-cols-5">
           {Object.keys(citiesMap)
-            .filter((city) => city !== "south_florida")
+            .filter((city) => city !== "south-florida")
             .map((cityName, index) => (
               <div
                 key={index}
