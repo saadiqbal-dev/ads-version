@@ -25,7 +25,7 @@ const getAddress = (city) => {
       "LAUDERDALE-BY-THE-SEA",
     ].includes(cityToCheck)
   ) {
-    return "3315 E. Oakland Park Blvd. Suite 204, Ft. Lauderdale, FL 33308";
+    return "3315 E. Oakland Park Blvd. Suite 204\nFt. Lauderdale, FL 33308";
   } else if (
     [
       "WEST PALM BEACH",
@@ -40,11 +40,11 @@ const getAddress = (city) => {
       "HILLSBORO BEACH",
     ].includes(cityToCheck)
   ) {
-    return "491 W Camino Real, Boca Raton, FL 33432";
+    return "491 W Camino Real\nBoca Raton, FL 33432";
   } else if ("SOUTH FLORIDA" === cityToCheck) {
     return "";
   } else {
-    return "2800 Glades Cir Suite 106, Weston, FL 33327";
+    return "2800 Glades Cir Suite 106\nWeston, FL 33327";
   }
 };
 
@@ -60,6 +60,7 @@ export const getPhoneNumber = (city) => {
       "SUNRISE",
       "LIGHTHOUSE POINT",
       "LAUDERDALE-BY-THE-SEA",
+      "SOUTH FLORIDA",
     ].includes(cityToCheck)
   ) {
     return "(954) 852-5326";
@@ -174,9 +175,10 @@ const Footer = () => {
               </div>
             </div>
             <div className="font-['satoshi-regular'] text-sm font-normal text-[#312E2C]">
-              <p>{address.split(",")[0]}</p>
-              <p>{address.split(",")[1]}</p>
-              <p>{address.split(",")[2]}</p>
+              {address &&
+                address
+                  .split("\n")
+                  .map((line, index) => <p key={index}>{line}</p>)}
             </div>
           </div>
         </div>
