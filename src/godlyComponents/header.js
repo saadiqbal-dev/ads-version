@@ -30,15 +30,15 @@ import sealCoating from "@/assets/homepageServices/seal_coating.webp";
 
 const services = [
   {
-    name: "Exterior Windows",
-    link: "exterior-windows",
+    name: "Exterior Window Cleaning",
+    link: "exterior-window-cleaning",
     image: exteriorWindow,
     description:
-      "It’s what we do best! Get rid of that nasty build-up of nature’s mildew and grime.",
+      "It's what we do best! Get rid of that nasty build-up of nature's mildew and grime.",
   },
   {
-    name: "Interior Windows",
-    link: "interior-windows",
+    name: "Interior Window Cleaning",
+    link: "interior-window-cleaning",
     image: interiorWindow,
     description:
       "Pet slobber, fingerprints, and so much more can leave residue that is tricky to get off.",
@@ -55,7 +55,7 @@ const services = [
     link: "house-washing",
     image: houseWashing,
     description:
-      "Wash away years of pollen, mold, rust, and dirt – bringing that shine back to your property’s exterior.",
+      "Wash away years of pollen, mold, rust, and dirt – bringing that shine back to your property's exterior.",
   },
   {
     name: "Roof Washing",
@@ -79,36 +79,36 @@ const services = [
       "Eliminate the cobwebs and dust in those hard to reach corners.",
   },
   {
-    name: "Light Fixtures",
-    link: "light-fixtures",
+    name: "Light Fixture Cleaning",
+    link: "light-fixture-cleaning",
     image: lightFixtures,
     description:
       "Keep both your interior and exterior lighting bright with thorough cleanings of your lanterns, sconces, and more.",
   },
   {
-    name: "Screen Cleans",
-    link: "screen-cleans",
+    name: "Screen Cleaning",
+    link: "screen-cleaning",
     image: screenCleans,
     description:
-      "We’ll happily remove, clean, and even replace your screens if necessary.",
+      "We'll happily remove, clean, and even replace your screens if necessary.",
   },
   {
-    name: "Skylights",
-    link: "skylights",
+    name: "Skylight Cleaning",
+    link: "skylight-cleaning",
     image: skylights,
     description:
       "Nearly impossible and slightly dangerous to reach, leave it to Godly to keep your skylights in top-notch shape.",
   },
   {
-    name: "Solar Panels",
-    link: "solar-panels",
+    name: "Solar Panel Cleaning",
+    link: "solar-panel-cleaning",
     image: solarPanels,
     description:
       "Dirty solar panels lead to less efficient energy absorption – keep them clean and running to their full potential. ",
   },
   {
-    name: "Seal Coating",
-    link: "seal-coating",
+    name: "Paver Sealing",
+    link: "paver-sealing",
     image: sealCoating,
     description:
       "Add a protective coating to your driveway/parking lot that protects against water, oils, and other damaging elements.",

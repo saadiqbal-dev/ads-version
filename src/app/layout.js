@@ -3,6 +3,7 @@ import "./globals.css";
 import { AppWrapper } from "@/context/godlyContext";
 import { citiesMap } from "@/godlyComponents/header/CitiesPopup";
 import ClientHead from "@/components/ClientHead"; // We'll create this
+import Script from "next/script";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -69,7 +70,7 @@ export async function generateMetadata({ params }) {
       type: "website",
       images: [
         {
-          url: "/assets/Thumbnail.png",
+          url: "https://godlywindows.com/assets/Thumbnail.png",
           width: 1200,
           height: 630,
           alt: "Godly Windows - Professional Window & Exterior Cleaning Services",
@@ -81,7 +82,7 @@ export async function generateMetadata({ params }) {
       title: title,
       description:
         "South Florida's premier window cleaning and exterior home service.",
-      images: ["/assets/Thumbnail.png"],
+      images: ["https://godlywindows.com/assets/Thumbnail.png"],
       creator: "@godlywindows",
     },
     icons: {
@@ -105,6 +106,20 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${inter.variable}`}
       >
+        {/* Google Analytics */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-6P0ST66B9P"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-6P0ST66B9P');
+          `}
+        </Script>
+
         <AppWrapper>
           <ClientHead />
           {children}

@@ -22,10 +22,12 @@ export default function ClientHead() {
     return city;
   };
 
-  const effectiveCity = getCityFromUrl() || city;
+  const effectiveCity = (getCityFromUrl() || city)
+    ?.toLowerCase()
+    .replace(/\b\w/g, (l) => l.toUpperCase());
   let title = "Godly Windows & Wash Co.";
 
-  if (effectiveCity && effectiveCity !== "SOUTH FLORIDA") {
+  if (effectiveCity && effectiveCity !== "South Florida") {
     title = `${effectiveCity} | Godly Windows`;
   }
 

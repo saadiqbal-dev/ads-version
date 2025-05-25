@@ -18,7 +18,7 @@ import { cn } from "@/lib/utils";
 const servicesList = [
   { id: "exterior-window-cleaning", name: "Exterior Window Cleaning" },
   { id: "house-washing", name: "House Washing" },
-  { id: "seal-pavers", name: "Seal Pavers" },
+  { id: "paver-sealing", name: "Paver Sealing" },
   // { id: "screen-cleaning", name: "Screen Cleaning" },
   // { id: "interior-window-cleaning", name: "Interior Window Cleaning" },
   { id: "roof-washing", name: "Roof Washing" },
@@ -68,12 +68,34 @@ export default function QuoteForm({ isDialog }) {
       "patUUfkvMZUeWcpBx.3b8a637c96292840817c1a291c161b70a0b5952d6a75d9ab0f000bb70a097e51",
   }).base("appzgFLd0zSxa5rIx");
 
+  const formatPhoneNumber = (value) => {
+    // Remove all non-digits
+    const phoneNumber = value.replace(/\D/g, "");
+
+    // Format as xxx-xxx-xxxx
+    if (phoneNumber.length >= 6) {
+      return `${phoneNumber.slice(0, 3)}-${phoneNumber.slice(3, 6)}-${phoneNumber.slice(6, 10)}`;
+    } else if (phoneNumber.length >= 3) {
+      return `${phoneNumber.slice(0, 3)}-${phoneNumber.slice(3)}`;
+    }
+    return phoneNumber;
+  };
+
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: type === "checkbox" ? checked : value,
-    }));
+
+    if (name === "phone") {
+      const formattedPhone = formatPhoneNumber(value);
+      setFormData((prev) => ({
+        ...prev,
+        phone: formattedPhone,
+      }));
+    } else {
+      setFormData((prev) => ({
+        ...prev,
+        [name]: type === "checkbox" ? checked : value,
+      }));
+    }
   };
 
   const handleSubmit = async (e) => {
@@ -118,7 +140,7 @@ export default function QuoteForm({ isDialog }) {
         zipcode: "",
         agree: false,
       });
-      setDate(new Date());
+      setDate(undefined);
     } catch (error) {
       console.error("Error submitting to Airtable:", error);
       setSubmitStatus("error");

@@ -205,7 +205,7 @@ const FourStepProcess = () => {
             onClick={() => toggleBadge(0)}
           />
           <Badge
-            text="hard water stain removal"
+            text="Hard Water Stain Removal"
             className={`-mt-4 scale-95 ${"rotate-[-3.582deg]"}`}
             drops
             starClassName={"rotate-0"}

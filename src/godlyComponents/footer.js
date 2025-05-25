@@ -156,9 +156,11 @@ const Footer = () => {
               <p className="font-['satoshi-regular'] text-lg font-normal">
                 <Link href={`tel:${phoneNumber}`}>{phoneNumber}</Link>
               </p>
-              <p className="font-['satoshi-regular'] text-sm font-normal">
-                hello@godlywindows.com
-              </p>
+              <Link href="mailto:hello@godlywindows.com">
+                <p className="font-['satoshi-regular'] text-sm font-normal">
+                  hello@godlywindows.com
+                </p>
+              </Link>
             </div>
           </div>
           <div className="item-center flex justify-between">
