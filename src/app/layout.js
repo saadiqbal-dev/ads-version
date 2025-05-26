@@ -88,11 +88,9 @@ export async function generateMetadata({ params }) {
     icons: {
       icon: [
         { url: "/favicon.ico" },
-        { url: "/icon.png", type: "image/png", sizes: "32x32" },
+        { url: "/favicon.svg", type: "image/svg+xml", sizes: "32x32" },
       ],
-      apple: [
-        { url: "/apple-touch-icon.png", type: "image/png", sizes: "180x180" },
-      ],
+      apple: [{ url: "/favicon.svg", type: "image/svg+xml", sizes: "180x180" }],
     },
     verification: {
       google: "google-site-verification-code",
