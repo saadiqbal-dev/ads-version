@@ -58,7 +58,7 @@ const FourStepProcess = () => {
         </svg>
       ),
       title: "Squeegee",
-      text: "We use pro-grade squeegees to remove all water and dirt, leaving a streak-free crystal-clear finish.",
+      text: "We use pro-grade squeegees to remove all water, dirt, and grime leaving a streak-free crystal-clear finish.",
     },
     {
       number: "03",
