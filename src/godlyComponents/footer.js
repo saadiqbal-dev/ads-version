@@ -25,7 +25,7 @@ const getAddress = (city) => {
       "LAUDERDALE-BY-THE-SEA",
     ].includes(cityToCheck)
   ) {
-    return "3315 E. Oakland Park Blvd. Suite 204\nFt. Lauderdale, FL 33308";
+    return "3315 E Oakland Park Blvd. Suite 204\nFt. Lauderdale, FL 33308";
   } else if (
     [
       "WEST PALM BEACH",
