@@ -149,6 +149,18 @@ const Footer = () => {
                 >
                   Holiday lighting
                 </Link>
+                <Link
+                  href="/privacy-policy"
+                  className="font-['satoshi-regular'] text-base font-normal hover:underline md:text-sm"
+                >
+                  Privacy Policy
+                </Link>
+                <Link
+                  href="/terms-and-conditions"
+                  className="font-['satoshi-regular'] text-base font-normal hover:underline md:text-sm"
+                >
+                  Terms and Conditions
+                </Link>
               </div>
             </div>
 
