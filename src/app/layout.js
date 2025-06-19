@@ -4,6 +4,7 @@ import { AppWrapper } from "@/context/godlyContext";
 import { citiesMap } from "@/godlyComponents/header/CitiesPopup";
 import ClientHead from "@/components/ClientHead"; // We'll create this
 import Script from "next/script";
+import Head from "next/head";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -100,9 +101,13 @@ export async function generateMetadata({ params }) {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en">
+      <Head>
+        <meta name="robots" content="noindex,nofollow" />
+      </Head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${inter.variable}`}
+        suppressHydrationWarning
       >
         {/* Google Analytics */}
         <Script
