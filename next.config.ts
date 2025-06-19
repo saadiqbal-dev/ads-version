@@ -9,40 +9,34 @@ const nextConfig: NextConfig = {
   },
   images: {
     // Enable image optimization
-    formats: ['image/webp', 'image/avif'],
-    
+    formats: ["image/webp", "image/avif"],
+
     // Optimize for performance
     minimumCacheTTL: 31536000, // 1 year cache
-    
-    // Quality settings
-    quality: 85, // Good balance between quality and file size
-    
+
     // Responsive image sizes
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
-    
-    // Enable placeholder for better UX
-    placeholder: 'blur',
-    
+
     // Domains for external images (if needed)
     domains: [],
-    
+
     // Disable static optimization for better performance
     unoptimized: false,
   },
-  
+
   // Webpack configuration for better image handling
   webpack: (config) => {
     // Add custom webpack rules for image optimization if needed
     return config;
   },
-  
+
   // Performance optimizations
   compress: true,
-  
+
   // Experimental features for better performance
   experimental: {
-    optimizePackageImports: ['@/components', '@/godlyComponents'],
+    optimizePackageImports: ["@/components", "@/godlyComponents"],
   },
 };
 
