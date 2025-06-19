@@ -1,7 +1,7 @@
 // src/godlyComponents/header/MobileNav.js
 import React from "react";
 import Link from "next/link";
-import { ChevronDown, Phone } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import HeaderButton from "@/components/HeaderButton";
 import CitySelector from "./CitySelector"; // Import CitySelector for mobile use
 import PhoneNumber from "./PhoneNumber";
@@ -18,7 +18,7 @@ const MobileNav = ({
         <li>
           <button
             onClick={onServicesClick}
-            className="trim flex cursor-pointer items-center gap-1 font-['marlton'] text-base text-[#FDE4C8] hover:text-[#FFCA8F]"
+            className="trim flex cursor-pointer items-center gap-1 font-['Marlton'] text-base text-[#FDE4C8] hover:text-[#FFCA8F]"
           >
             SERVICES <ChevronDown size={18} />
           </button>

@@ -12,34 +12,8 @@ import { cn } from "@/lib/utils";
 import { useGodlyContext } from "@/context/godlyContext";
 import { usePathname, useRouter } from "next/navigation";
 
-export const citiesMap = {
-  "boca-raton": "BOCA RATON",
-  "coral-springs": "CORAL SPRINGS",
-  davie: "DAVIE",
-  "deerfield-beach": "DEERFIELD BEACH",
-  "delray-beach": "DELRAY BEACH",
-  "fort-lauderdale": "FORT LAUDERDALE",
-  "hallandale-beach": "HALLANDALE BEACH",
-  "hillsboro-beach": "HILLSBORO BEACH",
-  hollywood: "HOLLYWOOD",
-  "lauderdale-by-the-sea": "LAUDERDALE-BY-THE-SEA",
-  "lighthouse-point": "LIGHTHOUSE POINT",
-  margate: "MARGATE",
-  miami: "MIAMI",
-  miramar: "MIRAMAR",
-  "oakland-park": "OAKLAND PARK",
-  parkland: "PARKLAND",
-  "pembroke-pines": "PEMBROKE PINES",
-  plantation: "PLANTATION",
-  "pompano-beach": "POMPANO BEACH",
-  "royal-palm-beach": "ROYAL PALM BEACH",
-  "south-florida": "SOUTH FLORIDA",
-  "southwest-ranches": "SOUTHWEST RANCHES",
-  sunrise: "SUNRISE",
-  tamarac: "TAMARAC",
-  "west-palm-beach": "WEST PALM BEACH",
-  weston: "WESTON",
-};
+import { citiesMap } from "@/data/cities";
+export { citiesMap };
 
 const CitiesPopup = ({ open, onOpenChange }) => {
   const { setCity } = useGodlyContext();
