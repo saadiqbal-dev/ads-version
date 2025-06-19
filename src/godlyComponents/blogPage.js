@@ -11,9 +11,9 @@ const BlogPage = () => {
       <div className="mt-17 flex w-full flex-col items-center justify-center bg-[#fef7ea] px-[30px] py-[45px] text-[#312E2C] md:mt-14 md:p-16">
         <div className="flex flex-col items-center justify-center gap-3 border-b-4 border-double border-black pb-8 md:w-3/4">
           <div className="flex w-full flex-col gap-3 md:mb-2 md:border-b-2 md:border-solid md:border-black md:pb-4">
-            <h1 className="text-center text-[32px] text-[#312E2C] text-shadow-[#AF8F6E] md:pb-2 md:text-6xl">
+            <h2 className="text-center text-[32px] text-[#312E2C] text-shadow-[#AF8F6E] md:pb-2 md:text-6xl">
               News HEADLINE
-            </h1>
+            </h2>
             <p className="text-center font-['satoshi-light'] text-sm text-[#373A44] md:mt-2">
               April 20th, 2026
             </p>

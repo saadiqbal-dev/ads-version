@@ -3,6 +3,7 @@ import React from "react";
 import "@/styles/fourstepprocess.css";
 import QuoteForm from "./quoteForm";
 import { useGodlyContext } from "@/context/godlyContext";
+import { generateHomeH1 } from "@/data/metaTitles";
 
 const Hero = () => {
   const { city } = useGodlyContext();
@@ -16,9 +17,9 @@ const Hero = () => {
       <div className="relative z-10 mx-auto max-w-[1440px] px-[20px] md:px-14 md:pb-32">
         <div className="flex min-h-[600px] flex-col justify-end gap-3 pb-10 xl:min-h-[815px]">
           <div className="flex items-center justify-start gap-3">
-            <h1 className="font-marlton trim text-base tracking-[2.07px] text-[#FDE4C8] md:text-base xl:text-[20.704px]">
+            <span className="font-marlton trim text-base tracking-[2.07px] text-[#FDE4C8] md:text-base xl:text-[20.704px]">
               TOP RATED
-            </h1>
+            </span>
             <div className="trim flex items-center gap-[3.774px]">
               <Star className="h-[13px] w-[13px] md:size-3 xl:h-[17px] xl:w-[18px]" />
               <Star className="h-[13px] w-[13px] md:size-3 xl:h-[17px] xl:w-[18px]" />
@@ -27,7 +28,10 @@ const Hero = () => {
               <Star className="h-[13px] w-[13px] md:size-3 xl:h-[17px] xl:w-[18px]" />
             </div>
           </div>
-          <h1 className="flex flex-wrap items-center gap-4 xl:gap-8">
+          <h1 className="sr-only">
+            {generateHomeH1()}
+          </h1>
+          <div className="flex flex-wrap items-center gap-4 xl:gap-8" role="heading" aria-level="1">
             <span className="flex flex-wrap items-center gap-2">
               <span className="font-marlton trim shrink-0 items-center gap-2 text-[32px] font-normal tracking-[3px] text-white md:text-4xl md:tracking-[6.584px] xl:text-[64px] 2xl:text-[73.161px]">
                 Window cleaning
@@ -46,7 +50,7 @@ const Hero = () => {
             <span className="font-marlton trim shrink-0 items-center gap-2 text-4xl font-normal tracking-[3px] text-white md:block md:tracking-[7.4] xl:text-[64px] 2xl:text-[73.161px]">
               {city}
             </span>
-          </h1>
+          </div>
           <p className="font-['satoshi-regular'] text-sm font-medium text-white md:text-base xl:text-xl">
             we specialize in window washing, home washing, pressure washing,
             paver sealing and more.

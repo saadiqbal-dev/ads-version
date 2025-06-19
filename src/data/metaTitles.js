@@ -98,3 +98,44 @@ export const generateCityDescription = (cityName) => {
 
 // Home page optimized description
 export const homeDescription = "Window cleaning & pressure washing in South Florida. Professional exterior cleaning services for homes & businesses. Free estimates & satisfaction guarantee.";
+
+// SEO-optimized heading structure functions
+export const generateServiceH1 = (serviceSlug, cityName) => {
+  const serviceName = serviceMetaTitles[serviceSlug];
+  const location = cityName ? capitalizeString(cityName) : "South Florida";
+  
+  if (!serviceName) {
+    const fallbackService = serviceSlug
+      ? serviceSlug.replace(/-/g, " ").replace(/\b\w/g, (l) => l.toUpperCase())
+      : "Service";
+    return `Professional ${fallbackService} Services in ${location}`;
+  }
+  
+  return `Professional ${serviceName} Services in ${location}`;
+};
+
+export const generateCityH1 = (cityName) => {
+  const location = cityName ? capitalizeString(cityName) : "South Florida";
+  return `Window Cleaning & Pressure Washing Services in ${location}`;
+};
+
+export const generateHomeH1 = () => {
+  return "Professional Window Cleaning & Pressure Washing Services in South Florida";
+};
+
+// Service page section headings
+export const generateServiceSectionHeadings = (serviceSlug, cityName) => {
+  const serviceName = serviceMetaTitles[serviceSlug] || serviceSlug.replace(/-/g, " ").replace(/\b\w/g, (l) => l.toUpperCase());
+  const location = cityName ? capitalizeString(cityName) : "South Florida";
+  
+  return {
+    h2WhyEssential: `Why ${serviceName} is Essential in ${location}`,
+    h2WhatIncluded: `What's Included in Our ${serviceName} Service`,
+    h2ServicesNearYou: `${serviceName} Services Near You in ${location}`,
+    h2Process: `Our ${serviceName} Process`,
+    h2Benefits: `Benefits of Professional ${serviceName}`,
+    h2Areas: `${serviceName} Service Areas in ${location}`,
+    h2Pricing: `${serviceName} Pricing in ${location}`,
+    h2Contact: `Contact Us for ${serviceName} in ${location}`
+  };
+};

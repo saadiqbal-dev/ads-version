@@ -14,12 +14,12 @@ const Location = () => {
         >
           PROUDLY SERVING
         </h4>
-        <h1
+        <h4
           className="text-grain trim !bg-white text-[32px] font-normal tracking-[3.2px] md:text-[64px] md:tracking-wider"
           data-text="THESE TOWNS"
         >
           THESE TOWNS
-        </h1>
+        </h4>
         <h4
           className="text-grain trim md:t-0 !bg-white text-[32px] font-normal tracking-wider md:text-2xl"
           data-text="IN SOUTH "

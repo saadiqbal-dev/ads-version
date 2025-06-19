@@ -18,14 +18,14 @@ const Testimonials = () => {
         <div className="flex w-full flex-col gap-[63px] md:relative md:flex-row md:items-end md:justify-center">
           <div className="flex flex-col items-center justify-center gap-6 md:gap-9">
             <div className="flex items-end gap-6">
-              <h1 className="trim md:text-trim text-[32px] tracking-wider text-[#FFFFFF] md:text-[86px]">
+              <h4 className="trim md:text-trim text-[32px] tracking-wider text-[#FFFFFF] md:text-[86px]">
                 TRUSTED
-              </h1>
+              </h4>
               <h4 className="trim md:text-trim text-[22px] tracking-wider text-[#FDE4C8] md:text-3xl">
                 BY
               </h4>
             </div>
-            <h1 className="-mt-5 md:-mt-9">
+            <h2 className="-mt-5 md:-mt-9">
               <span
                 className="text-grain !bg-[#FDE4C8] font-['luminaire-script'] text-base md:mr-4 md:ps-2 md:pb-2 md:text-[64px] md:before:inset-0"
                 data-text="Your"
@@ -38,7 +38,7 @@ const Testimonials = () => {
               >
                 NEIGHBORS
               </span>
-            </h1>
+            </h2>
           </div>
           <Link
             className="flex justify-end text-base md:absolute md:right-0 md:block md:text-2xl"

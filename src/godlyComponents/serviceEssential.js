@@ -3,8 +3,16 @@
 import React, { useState } from "react";
 import Services from "@/data/servicesData";
 import { cn } from "@/lib/utils";
+import { generateServiceSectionHeadings } from "@/data/metaTitles";
+import { citiesMap } from "@/data/cities";
+import { useGodlyContext } from "@/context/godlyContext";
 
 const EssentialService = ({ slug }) => {
+  const { city } = useGodlyContext();
+  const cityKey = Object.keys(citiesMap).find((key) => citiesMap[key] === city);
+  const cityName = citiesMap[cityKey];
+  const headings = generateServiceSectionHeadings(slug, cityName);
+  
   // Add state to track active card
   const [activeCard, setActiveCard] = useState(null);
 
@@ -17,21 +25,24 @@ const EssentialService = ({ slug }) => {
     <div className="paper-bg-16 flex flex-col items-center gap-16 bg-[#262424] px-4 py-16 pt-24 sm:gap-18 sm:px-5 sm:py-20 md:gap-20 md:px-6 md:py-24 lg:gap-24 lg:px-8 lg:py-28 xl:gap-28 xl:px-10 xl:py-32">
       {/* Heading Section */}
       <div className="flex flex-col items-center justify-center gap-1 md:gap-5">
-        <h4
+        <h2 className="sr-only">
+          {headings.h2WhyEssential}
+        </h2>
+        <span
           className="text-grain trim !bg-[#FFFFFF] text-center text-base tracking-[1.35px] sm:text-lg sm:tracking-[1.5px] md:text-xl md:tracking-wide lg:text-2xl lg:tracking-wider xl:text-3xl xl:tracking-widest"
           data-text="WHY KEEPING YOUR"
         >
           WHY KEEPING YOUR
-        </h4>
-        <h4
+        </span>
+        <span
           className="text-grain trim !bg-[#F3CA9E] text-center text-[32px] tracking-wide sm:text-[40px] md:text-7xl lg:text-[80px] xl:text-[90px]"
           data-text={
             Services[slug]["hero"][0] + " " + Services[slug]["hero"][1]
           }
         >
           {Services[slug]["hero"][0]}&nbsp;{Services[slug]["hero"][1]}
-        </h4>
-        <h1
+        </span>
+        <span
           className="trim relative z-10 text-center font-['luminaire-script'] text-xl text-white sm:text-2xl md:-mt-5 md:text-6xl lg:text-[72px] xl:text-[80px]"
           style={{
             WebkitTextStrokeWidth: "5px",
@@ -41,7 +52,7 @@ const EssentialService = ({ slug }) => {
           }}
         >
           Is Essential?
-        </h1>
+        </span>
       </div>
 
       {/* Info Cards Section */}

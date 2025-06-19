@@ -22,17 +22,17 @@ const Services = () => {
     <div className="paper-bg-16 relative overflow-clip bg-[#262424]">
       <div className="relative flex min-h-screen flex-col items-center gap-[37px] px-6 sm:px-8 md:gap-20 md:px-6 md:py-24 lg:px-10 lg:py-28 xl:px-12 xl:py-32">
         <div className="flex flex-col items-center justify-center gap-6">
-          <h1 className="with-text trim hidden rotate-[-4.74deg] transform text-center font-['luminaire-script'] text-[24px] text-[#FDE4C8] underline sm:text-[26px] md:flex md:text-[28px] lg:text-[30px] xl:text-[32px]">
+          <span className="with-text trim hidden rotate-[-4.74deg] transform text-center font-['luminaire-script'] text-[24px] text-[#FDE4C8] underline sm:text-[26px] md:flex md:text-[28px] lg:text-[30px] xl:text-[32px]">
             We are
-          </h1>
+          </span>
           <div className="flex flex-col items-center justify-center">
             <div className="text-trim flex items-end">
-              <h4
+              <h2
                 className="text-grain font-marlton !bg-white text-[32px] tracking-[3.84px] sm:text-[40px] md:text-[64px] lg:text-[72px] xl:text-[80px]"
                 data-text="MORE THAN"
               >
                 MORE THAN
-              </h4>
+              </h2>
               <span
                 className="text-grain ms-2 mb-1 !bg-white text-sm tracking-[1.2px] sm:text-base md:ms-[21px] md:mb-3 md:text-[20px] lg:text-[22px] xl:text-[24px]"
                 data-text="JUST"
@@ -40,12 +40,12 @@ const Services = () => {
                 JUST
               </span>
             </div>
-            <h4
+            <span
               className="text-grain font-marlton -mt-2 !bg-white text-[32px] tracking-[3.84px] sm:text-[40px] md:-mt-5 md:text-[64px] lg:text-[72px] xl:text-[80px]"
               data-text="WINDOW WASHERS"
             >
               WINDOW WASHERS
-            </h4>
+            </span>
           </div>
 
           <p className="text-trim hidden text-center font-[satoshi-regular] text-[24px] leading-[115%] text-white/60 sm:text-[20px] md:block md:text-[24px] lg:text-[26px] xl:text-[28px]">

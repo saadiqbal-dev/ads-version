@@ -71,9 +71,9 @@ const Promise = () => {
         }}
       >
         <div className="flex -translate-y-7 flex-col items-center gap-4">
-          <h1 className="text-trim -rotate-2 text-[64px] font-normal tracking-[5.76px] text-[#191717]">
+          <h2 className="text-trim -rotate-2 text-[64px] font-normal tracking-[5.76px] text-[#191717]">
             old fashioned Values
-          </h1>
+          </h2>
           <h4 className="absolute top-3/5 -mt-4 -rotate-2 text-3xl font-normal text-[#191717]">
             <span className="text-[32px] underline">UNRIVALED</span>{" "}
             <span
@@ -87,12 +87,12 @@ const Promise = () => {
       </div>
       <Story />
       <div className="flex flex-col items-center justify-center gap-4 py-10 md:gap-10">
-        <h1
+        <h4
           className="text-grain trim !bg-[#191717] text-center text-4xl font-normal tracking-wide md:text-[64px]"
           data-text="Delivering"
         >
           Delivering
-        </h1>
+        </h4>
         <h4 className="trim text-center text-4xl font-normal tracking-wide md:-mt-6 md:text-[64px]">
           <span
             className="md:text-grain trim relative text-[#61503E] underline"
@@ -256,7 +256,7 @@ function Story() {
         </div>
       </div>
       <div className="flex flex-1 flex-col items-start justify-center gap-[34px] p-3 md:gap-[40px]">
-        <h1 className="flex items-center gap-4 text-4xl text-white md:text-6xl">
+        <h4 className="flex items-center gap-4 text-4xl text-white md:text-6xl">
           <span
             className="text-grain !bg-[#F3CA9E] font-['marlton']"
             data-text="LOCAL"
@@ -277,7 +277,7 @@ function Story() {
             {" "}
             OWNED
           </span>
-        </h1>
+        </h4>
         <p
           className="text-justify text-sm tracking-wide text-[#A4A4A4] md:text-base"
           style={{

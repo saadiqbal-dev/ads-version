@@ -3,8 +3,16 @@ import "@/styles/fourstepprocess.css";
 import background from "../assets/texture.webp";
 import Services from "@/data/servicesData";
 import { cn } from "@/lib/utils";
+import { generateServiceSectionHeadings } from "@/data/metaTitles";
+import { citiesMap } from "@/data/cities";
+import { useGodlyContext } from "@/context/godlyContext";
 
 const ServiceIncludes = ({ slug }) => {
+  const { city } = useGodlyContext();
+  const cityKey = Object.keys(citiesMap).find((key) => citiesMap[key] === city);
+  const cityName = citiesMap[cityKey];
+  const headings = generateServiceSectionHeadings(slug, cityName);
+  
   // Add state to track active card
   const [activeCard, setActiveCard] = useState(null);
 
@@ -20,7 +28,10 @@ const ServiceIncludes = ({ slug }) => {
       style={{ backgroundImage: `url(${background.src})` }}
     >
       <div className="md:w-full md:max-w-[854px] md:py-10">
-        <h4 className="trim m-0 w-full p-0 text-center text-[36px] leading-tight font-normal tracking-wide text-[#191717] before:inset-0 md:text-[64px] md:leading-tight">
+        <h2 className="sr-only">
+          {headings.h2WhatIncluded}
+        </h2>
+        <div className="trim m-0 w-full p-0 text-center text-[36px] leading-tight font-normal tracking-wide text-[#191717] before:inset-0 md:text-[64px] md:leading-tight">
           <span className="text-grain !bg-[#191717]" data-text="WHAT'S">
             WHAT&apos;S
           </span>{" "}
@@ -39,7 +50,7 @@ const ServiceIncludes = ({ slug }) => {
           <span className="text-grain !bg-[#191717]" data-text="SERVICE">
             SERVICE
           </span>
-        </h4>
+        </div>
       </div>
 
       <div className="grid w-full max-w-[1126px] grid-cols-2 flex-wrap justify-center gap-3 md:flex md:flex-wrap lg:pb-12">

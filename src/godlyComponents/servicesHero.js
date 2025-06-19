@@ -6,16 +6,24 @@ import Image from "next/image";
 import { cn } from "@/lib/utils";
 import FreeQuoteButton from "@/components/freeQuote";
 import Services from "@/data/servicesData";
+import { citiesMap } from "@/data/cities";
+import { generateServiceH1 } from "@/data/metaTitles";
 
 const ServicesHero = ({ slug }) => {
   const { city } = useGodlyContext();
+  const cityKey = Object.keys(citiesMap).find((key) => citiesMap[key] === city);
+  const cityName = citiesMap[cityKey];
+  
   return (
     <div className="paper-bg-16 mt-17 flex flex-col items-center justify-center gap-20 bg-[#252525] px-[30px] py-[42px] md:mt-14 md:py-[100px]">
+      <h1 className="sr-only">
+        {generateServiceH1(slug, cityName)}
+      </h1>
       <div className="flex flex-col items-center justify-center gap-4">
         <div className="flex items-center justify-start gap-3">
-          <h1 className="font-marlton trim text-base tracking-[2.07px] text-[#FDE4C8] md:text-[20.704px]">
+          <span className="font-marlton trim text-base tracking-[2.07px] text-[#FDE4C8] md:text-[20.704px]">
             TOP RATED
-          </h1>
+          </span>
           <div className="trim flex items-center gap-[3.774px]">
             <Star className="" />
             <Star />
@@ -24,7 +32,7 @@ const ServicesHero = ({ slug }) => {
             <Star />
           </div>
         </div>
-        <h1
+        <div
           className={cn(
             "text-grain trim flex flex-col flex-wrap items-center bg-white! pb-0! text-center text-[64px] tracking-[5.23px] md:flex-row md:text-center md:text-[88px] md:leading-normal",
             Services[slug]["hero"][0].split(" ").length === 1 && "md:mr-24",
@@ -47,10 +55,10 @@ const ServicesHero = ({ slug }) => {
               </span>
             ))}
           </div>
-        </h1>
+        </div>
         <div className="flex w-full flex-col md:relative md:w-full">
           <div className="relative flex w-full items-end">
-            <h1
+            <div
               className={cn(
                 "trim absolute top-1 left-0 z-10 max-h-fit w-full rotate-[-6.668deg] overflow-visible text-end tracking-wide md:top-9 md:left-3",
                 Services[slug]["hero"][0].split(" ").length === 1 && "md:ms-12",
@@ -73,7 +81,7 @@ const ServicesHero = ({ slug }) => {
               >
                 {Services[slug]["hero"][1]}
               </span>
-            </h1>
+            </div>
             <span className="absolute top-6 right-0 max-w-[100px] font-['marlton'] text-base leading-tight font-[400] tracking-[2px] text-[#FDE4C8] md:hidden">
               {city}
             </span>

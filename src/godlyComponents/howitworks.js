@@ -34,12 +34,12 @@ const HowItWorks = () => {
       className="paper-bg-16 flex flex-col items-center justify-items-center gap-[70px] bg-[#ebded1] bg-cover bg-center bg-no-repeat px-[30px] py-[100px] bg-blend-multiply md:gap-0 md:p-16 md:pb-24"
     >
       <div className="flex flex-col items-center justify-center">
-        <h1
+        <h2
           className="text-grain !bg-[#191717] text-[38px] font-normal tracking-[2.28px] md:text-[64px] md:tracking-normal"
           data-text="HOW IT WORKS"
         >
           HOW IT WORKS
-        </h1>
+        </h2>
         <h4
           className="text-grain -mt-2 !bg-[#61503E] text-[20px] font-normal tracking-[1.8px] md:text-[32px] md:tracking-normal"
           data-text="IN 3 SIMPLE STEPS"

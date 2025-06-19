@@ -12,8 +12,8 @@ const DesktopNav = ({ onServicesClick }) => {
             onClick={onServicesClick}
             className="flex cursor-pointer items-center gap-1 text-sm text-[#FDE4C8] hover:text-[#FFCA8F] md:items-end xl:text-base"
           >
-            SERVICES{" "}
-            <span>
+            <span className="">SERVICES</span>
+            <span className="mb-1">
               <ChevronDown size={18} />
             </span>
           </button>

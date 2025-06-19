@@ -11,9 +11,14 @@ import near5 from "@/assets/near5.webp";
 import Services from "@/data/servicesData";
 import { cn } from "@/lib/utils";
 import { useGodlyContext } from "@/context/godlyContext";
+import { generateServiceSectionHeadings } from "@/data/metaTitles";
+import { citiesMap } from "@/data/cities";
 
 const ServiceNearYou = ({ slug }) => {
   const { city } = useGodlyContext();
+  const cityKey = Object.keys(citiesMap).find((key) => citiesMap[key] === city);
+  const cityName = citiesMap[cityKey];
+  const headings = generateServiceSectionHeadings(slug, cityName);
 
   // const steps1 = [
   //   {
@@ -93,15 +98,18 @@ const ServiceNearYou = ({ slug }) => {
     <div className="fourstepprocess paper-bg-16 bg-[#262424] pb-24! md:pb-0">
       <div className="fourstepprocess-inner">
         <div className="w-full text-center">
-          <h1
+          <h2 className="sr-only">
+            {headings.h2ServicesNearYou}
+          </h2>
+          <div
             className="text-grain mx-auto !bg-[#FDE4C8] text-center text-[32px] md:text-6xl"
             data-text={
               Services[slug]["hero"][0] + " " + Services[slug]["hero"][1]
             }
           >
             {Services[slug]["hero"][0]}&nbsp;{Services[slug]["hero"][1]}
-          </h1>
-          <h4
+          </div>
+          <div
             className="z-10 flex items-center justify-center gap-1.5 text-center font-['luminaire-script'] text-[20px] text-white md:-mt-10 md:items-end md:gap-5 md:text-[64px]"
             style={{
               WebkitTextStrokeWidth: "5px",
@@ -114,7 +122,7 @@ const ServiceNearYou = ({ slug }) => {
             <span className="mt-1.5 inline-flex text-left font-['marlton'] text-[8px] tracking-[1px] text-[#FDE4C8] md:mb-2 md:max-w-[94px] md:text-base md:tracking-[2px]">
               {city}
             </span>
-          </h4>
+          </div>
         </div>
 
         <div className="pt-20 pb-6 text-white md:hidden md:pb-16">
@@ -197,13 +205,13 @@ const ServiceNearYou = ({ slug }) => {
             ))}
           </div>
         </div>
-        <h1 className="trim mx-auto max-w-[343.5px] text-center text-xl font-normal tracking-wide text-white md:w-120 md:max-w-fit md:text-3xl">
+        <h3 className="trim mx-auto max-w-[343.5px] text-center text-xl font-normal tracking-wide text-white md:w-120 md:max-w-fit md:text-3xl">
           Maximize energy{" "}
           <span className="font-['luminaire-script'] text-[#F3CA9E]">
             Efficiency
           </span>{" "}
           with our professional solar panel cleaning services.
-        </h1>
+        </h3>
       </div>
     </div>
   );

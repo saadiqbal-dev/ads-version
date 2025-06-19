@@ -20,14 +20,14 @@ const Gurantee = () => {
             <h4 className="trim md:text-trim text-xs tracking-[1.08px] text-[#FFFFFF] md:mt-3 md:mb-4 md:text-3xl md:tracking-wide">
               THE
             </h4>
-            <h1
+            <h4
               className="trim md:text-trim text-grain !bg-[#F3CA9E] text-[48px] tracking-[4.32px] md:text-[102px] md:tracking-wide"
               data-text="GODLY"
             >
               GODLY
-            </h1>
+            </h4>
           </div>
-          <h1
+          <h4
             className="trim md:text-trim relative z-10 ml-15 font-['luminaire-script'] text-[27px] text-[#FFFFFF] md:-mt-6 md:ml-22 md:text-[64px]"
             style={{
               WebkitTextStrokeWidth: "8px",
@@ -37,7 +37,7 @@ const Gurantee = () => {
             }}
           >
             Guarantee
-          </h1>
+          </h4>
         </div>
         <div className="flex w-full flex-col items-center gap-[220px] bg-contain bg-center bg-no-repeat md:min-h-screen md:gap-[250px]">
           <div className="relative min-w-[660px] scale-40 md:h-60 md:scale-100">
@@ -48,7 +48,7 @@ const Gurantee = () => {
             <div className="paper-bg-8 gurantee absolute top-0 min-w-[660px] rounded-md bg-[#CBB7A0]! p-2 shadow">
               <div className="flex h-full w-full items-center justify-between rounded-md border border-black px-4 py-5">
                 <div className="flex w-3/4 flex-col justify-between gap-6">
-                  <h1
+                  <h4
                     className="card-number trim text-[rgba(49, 46, 44, 0.19)] text-5xl"
                     style={{
                       WebkitTextStrokeWidth: "1px",
@@ -57,7 +57,7 @@ const Gurantee = () => {
                     }}
                   >
                     01.
-                  </h1>
+                  </h4>
                   <h4 className="font-['satoshi-bold'] text-2xl text-black">
                     We respect your time
                   </h4>
@@ -80,7 +80,7 @@ const Gurantee = () => {
             <div className="gurantee absolute top-0 rounded-md bg-[#CBB7A0] p-2 shadow">
               <div className="flex h-full w-full items-center justify-between rounded-md border border-black px-4 py-5">
                 <div className="flex w-3/4 flex-col justify-between gap-6">
-                  <h1
+                  <h4
                     className="card-number trim text-[rgba(49, 46, 44, 0.19)] text-5xl"
                     style={{
                       WebkitTextStrokeWidth: "1px",
@@ -89,7 +89,7 @@ const Gurantee = () => {
                     }}
                   >
                     02.
-                  </h1>
+                  </h4>
                   <h4 className="font-['satoshi-bold'] text-2xl text-black">
                     We keep our word
                   </h4>
@@ -112,7 +112,7 @@ const Gurantee = () => {
             <div className="gurantee absolute top-0 min-w-[470px] rounded-md bg-[#CBB7A0] p-2 shadow">
               <div className="flex h-full w-full rounded-md border border-black px-4 py-5">
                 <div className="flex w-3/4 flex-col justify-between gap-6">
-                  <h1
+                  <h4
                     className="card-number trim text-[rgba(49, 46, 44, 0.19)] text-5xl"
                     style={{
                       WebkitTextStrokeWidth: "1px",
@@ -121,7 +121,7 @@ const Gurantee = () => {
                     }}
                   >
                     03.
-                  </h1>
+                  </h4>
                   <h4 className="card-heading font-['satoshi-bold'] text-2xl text-black">
                     We treat properties like our own
                   </h4>
