@@ -55,3 +55,46 @@ export const generateCityTitle = (cityName) => {
 // Home page optimized title
 export const homeTitle =
   "Window Cleaning & Pressure Washing Services in South Florida";
+
+// Service-specific meta description templates (optimized for 140-160 chars)
+const serviceDescriptions = {
+  "solar-panel-cleaning": "Solar panel cleaning in {location}. Maximize energy efficiency with professional cleaning services. Free estimates & satisfaction guarantee.",
+  "exterior-window-cleaning": "Professional window cleaning in {location}. Streak-free results with expert exterior cleaning services. Free quotes available.",
+  "interior-window-cleaning": "Interior window cleaning in {location}. Crystal-clear views with professional cleaning services. Satisfaction guaranteed.",
+  "gutter-cleaning": "Gutter cleaning in {location}. Protect your home from water damage with expert gutter services. Free estimates & satisfaction guarantee.",
+  "house-washing": "House washing in {location}. Restore curb appeal with professional soft wash services. Expert cleaning with satisfaction guarantee.",
+  "roof-washing": "Roof cleaning in {location}. Remove algae, moss & stains with safe low-pressure washing. Professional service with guarantee.",
+  "pressure-washing": "Pressure washing in {location}. Expert cleaning for driveways, patios & walkways. Professional results with satisfaction guarantee.",
+  "paver-sealing": "Paver sealing in {location}. Protect & enhance pavers with professional sealing services. Prevent fading & damage with guarantee.",
+  "light-fixture-cleaning": "Light fixture cleaning in {location}. Maximize brightness with professional cleaning services. Expert results guaranteed.",
+  "screen-cleaning": "Screen cleaning in {location}. Restore clarity & improve airflow with professional screen services. Satisfaction guaranteed.",
+  "skylight-cleaning": "Skylight cleaning in {location}. Maximize natural light with professional cleaning services. Expert care with satisfaction guarantee.",
+  "holiday-light-installation": "Holiday light installation in {location}. Hassle-free setup, maintenance & removal. Professional service with guarantee.",
+  "high-dusting": "High dusting services in {location}. Professional cleaning for hard-to-reach areas. Expert service with satisfaction guarantee."
+};
+
+// Generate SEO-optimized meta description for service pages
+export const generateServiceDescription = (serviceSlug, cityName) => {
+  const baseDescription = serviceDescriptions[serviceSlug];
+  const location = cityName ? capitalizeString(cityName) : "South Florida";
+  
+  if (!baseDescription) {
+    const fallbackService = serviceSlug
+      ? serviceSlug.replace(/-/g, " ").replace(/\b\w/g, (l) => l.toUpperCase())
+      : "service";
+    return `Professional ${fallbackService.toLowerCase()} in ${location}. Expert exterior cleaning with satisfaction guarantee. Free estimates available.`;
+  }
+  
+  // Replace location placeholder with actual city
+  return baseDescription.replace("{location}", location);
+};
+
+// Generate SEO-optimized meta description for city home pages
+export const generateCityDescription = (cityName) => {
+  const location = cityName ? capitalizeString(cityName) : "South Florida";
+  
+  return `Window cleaning & pressure washing in ${location}. Professional exterior cleaning services for homes & businesses. Free estimates & satisfaction guarantee.`;
+};
+
+// Home page optimized description
+export const homeDescription = "Window cleaning & pressure washing in South Florida. Professional exterior cleaning services for homes & businesses. Free estimates & satisfaction guarantee.";

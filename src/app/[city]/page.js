@@ -1,6 +1,6 @@
 import GodlyHome from "@/godlyComponents/home";
 import { citiesMap } from "@/data/cities";
-import { generateCityTitle } from "@/data/metaTitles";
+import { generateCityTitle, generateCityDescription } from "@/data/metaTitles";
 
 // Dynamic metadata generation for city pages
 export async function generateMetadata({ params }) {
@@ -8,7 +8,7 @@ export async function generateMetadata({ params }) {
   const cityName = citiesMap[city];
   
   const title = generateCityTitle(cityName);
-  const description = `Professional window cleaning and pressure washing services in ${cityName || 'South Florida'}. Expert exterior home services with 100% satisfaction guarantee. Free estimates available.`;
+  const description = generateCityDescription(cityName);
   
   return {
     title,

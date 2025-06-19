@@ -1,6 +1,6 @@
 import ServicesPage from "@/godlyComponents/servicesPage";
 import { citiesMap } from "@/data/cities";
-import { generateServiceTitle } from "@/data/metaTitles";
+import { generateServiceTitle, generateServiceDescription } from "@/data/metaTitles";
 
 // Dynamic metadata generation for service pages
 export async function generateMetadata({ params }) {
@@ -8,7 +8,7 @@ export async function generateMetadata({ params }) {
   const cityName = citiesMap[city];
   
   const title = generateServiceTitle(slug, cityName);
-  const description = `Professional ${slug.replace(/-/g, ' ')} services in ${cityName || 'South Florida'}. Expert exterior cleaning with 100% satisfaction guarantee. Free estimates available.`;
+  const description = generateServiceDescription(slug, cityName);
   
   return {
     title,

@@ -1,10 +1,10 @@
 import GodlyHome from "@/godlyComponents/home";
-import { homeTitle } from "@/data/metaTitles";
+import { homeTitle, homeDescription } from "@/data/metaTitles";
 
 // Static metadata for home page
 export const metadata = {
   title: homeTitle,
-  description: "South Florida's premier window cleaning and exterior home service. Professional window cleaning, pressure washing, gutter cleaning, and more with 100% satisfaction guarantee.",
+  description: homeDescription,
   keywords: [
     'window cleaning South Florida',
     'pressure washing South Florida',
@@ -17,7 +17,7 @@ export const metadata = {
   ],
   openGraph: {
     title: homeTitle,
-    description: "South Florida's premier window cleaning and exterior home service. Professional quality with exceptional customer service.",
+    description: homeDescription,
     url: "https://godlywindows.com",
     siteName: "Godly Windows",
     locale: "en_US",
@@ -26,7 +26,7 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     title: homeTitle,
-    description: "South Florida's premier window cleaning and exterior home service.",
+    description: homeDescription,
   },
   alternates: {
     canonical: "/",
