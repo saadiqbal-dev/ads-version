@@ -139,3 +139,26 @@ export const generateServiceSectionHeadings = (serviceSlug, cityName) => {
     h2Contact: `Contact Us for ${serviceName} in ${location}`
   };
 };
+
+// Generate SEO-optimized ALT text for service hero images
+export const generateServiceHeroAlt = (serviceSlug, cityName) => {
+  const location = cityName ? capitalizeString(cityName) : "South Florida";
+  
+  const serviceImageDescriptions = {
+    "solar-panel-cleaning": `solar panel cleaning service in ${location}`,
+    "exterior-window-cleaning": `exterior window cleaning technician in ${location}`,
+    "interior-window-cleaning": `interior window cleaning service in ${location}`,
+    "gutter-cleaning": `gutter cleaning professionals in ${location}`,
+    "house-washing": `house washing and pressure washing in ${location}`,
+    "roof-washing": `roof cleaning service in ${location}`,
+    "pressure-washing": `pressure washing service in ${location}`,
+    "paver-sealing": `paver sealing and restoration in ${location}`,
+    "light-fixture-cleaning": `light fixture cleaning service in ${location}`,
+    "screen-cleaning": `screen cleaning professionals in ${location}`,
+    "skylight-cleaning": `skylight cleaning service in ${location}`,
+    "holiday-light-installation": `holiday light installation service in ${location}`,
+    "high-dusting": `high dusting cleaning service in ${location}`,
+  };
+  
+  return serviceImageDescriptions[serviceSlug] || `professional cleaning service in ${location}`;
+};

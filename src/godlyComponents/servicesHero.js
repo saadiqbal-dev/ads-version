@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils";
 import FreeQuoteButton from "@/components/freeQuote";
 import Services from "@/data/servicesData";
 import { citiesMap } from "@/data/cities";
-import { generateServiceH1 } from "@/data/metaTitles";
+import { generateServiceH1, generateServiceHeroAlt } from "@/data/metaTitles";
 
 const ServicesHero = ({ slug }) => {
   const { city } = useGodlyContext();
@@ -92,7 +92,7 @@ const ServicesHero = ({ slug }) => {
       <div className="relative rounded-sm bg-[#e7e3df] p-2 text-[#1c1c1c] sm:p-2.5 md:p-3 lg:p-3.5 xl:p-4">
         <Image
           src={Services[slug]["hero"][2]}
-          alt="window"
+          alt={generateServiceHeroAlt(slug, cityName)}
           // width={1200}
           // height={1200}
           className="max-w-xs md:max-w-md"

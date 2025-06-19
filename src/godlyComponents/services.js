@@ -63,7 +63,7 @@ const Services = () => {
         <img
           className="pointer-events-none absolute overflow-clip object-contain opacity-25"
           src={"/assets/santa-bg-sparkle.webp"}
-          alt="cap"
+          alt=""
         />
         <div className="mt-4 mb-[164px] flex flex-col items-center justify-center gap-9 md:mb-[220px] md:max-w-[741px]">
           <div className="flex flex-col items-center justify-center gap-[35px]">
@@ -74,7 +74,7 @@ const Services = () => {
                   src={Cap}
                   height={102}
                   width={102}
-                  alt="cap"
+                  alt="holiday santa hat decoration"
                   className="pointer-events-none absolute -top-11 left-6 scale-50 md:-top-6 md:-left-1 md:scale-100"
                 />
               </h4>
@@ -85,7 +85,7 @@ const Services = () => {
                     src={textWaveBg}
                     height={400}
                     width={400}
-                    alt="cap"
+                    alt=""
                     className="absolute top-1/2 left-0 z-10 w-[calc(100%_+_32px)] -translate-y-1/2"
                   />
                   <p className="relative z-20 mx-2 -rotate-5 pb-0.5">{city}</p>
@@ -111,7 +111,7 @@ const Services = () => {
         src={Santa}
         height={"100%"}
         width={"100%"}
-        alt="cap"
+        alt="santa claus holiday decoration"
       ></Image>
     </div>
   );

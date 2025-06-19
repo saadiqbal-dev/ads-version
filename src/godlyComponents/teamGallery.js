@@ -12,16 +12,16 @@ import pic9 from "@/assets/blue-collar/9.webp";
 import pic10 from "@/assets/blue-collar/10.webp";
 
 const teamImages = [
-  { src: pic1, alt: "team", rotate: "-4.277deg" },
-  { src: pic2, alt: "team", rotate: "0.856deg" },
-  { src: pic3, alt: "team", rotate: "-3.93deg" },
-  { src: pic4, alt: "team", rotate: "3.759deg" },
-  { src: pic5, alt: "team", rotate: "-2.008deg" },
-  { src: pic6, alt: "team", rotate: "1.392deg" },
-  { src: pic7, alt: "team", rotate: "-2.008deg" },
-  { src: pic8, alt: "team", rotate: "1.629deg" },
-  { src: pic9, alt: "team", rotate: "-2.008deg" },
-  { src: pic10, alt: "team", rotate: "-2.008deg" },
+  { src: pic1, alt: "professional window cleaning team member", rotate: "-4.277deg" },
+  { src: pic2, alt: "exterior cleaning service technician", rotate: "0.856deg" },
+  { src: pic3, alt: "pressure washing specialist", rotate: "-3.93deg" },
+  { src: pic4, alt: "window washing professional", rotate: "3.759deg" },
+  { src: pic5, alt: "home exterior cleaning expert", rotate: "-2.008deg" },
+  { src: pic6, alt: "commercial cleaning service team member", rotate: "1.392deg" },
+  { src: pic7, alt: "solar panel cleaning technician", rotate: "-2.008deg" },
+  { src: pic8, alt: "gutter cleaning service professional", rotate: "1.629deg" },
+  { src: pic9, alt: "residential window cleaning specialist", rotate: "-2.008deg" },
+  { src: pic10, alt: "blue collar cleaning service team member", rotate: "-2.008deg" },
 ];
 
 const TeamGallery = () => {
