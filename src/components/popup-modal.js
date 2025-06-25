@@ -32,7 +32,7 @@ export function PopupModal() {
   return (
     <Dialog defaultOpen>
       <DialogContent
-        className="flex aspect-[1811/2711] min-h-[675px] max-w-[400px] flex-col border-0 bg-transparent bg-[url(/assets/UnionMobile.png)] bg-contain bg-center bg-no-repeat px-16 shadow-none md:max-w-[400px] md:bg-[url(/assets/Union.png)] md:px-8"
+        className="flex aspect-[1811/2711] min-h-[675px] max-w-[440px] flex-col border-0 bg-transparent bg-[url(/assets/UnionMobile.png)] bg-contain bg-center bg-no-repeat px-16 shadow-none md:max-w-[440px] md:bg-[url(/assets/Union.png)] md:px-8"
         hideCloseButton
       >
         <DialogHeader className="sr-only" />
@@ -61,15 +61,15 @@ export function PopupModal() {
           </div>
         </div>
 
-        <div className="absolute top-1/2 left-1/2 h-[1px] w-[calc(100%-32px)] -translate-x-1/2 -translate-y-1/2 bg-[url(/assets/dashes-ticket.png)] object-cover" />
+        <div className="absolute top-1/2 left-1/2 h-[1px] w-[calc(100%-80px)] -translate-x-1/2 -translate-y-1/2 bg-[url(/assets/dashes-ticket.png)] object-cover md:w-[calc(100%-32px)]" />
 
         <div className="mt-8 flex flex-col rounded-[12px] border border-black p-2 md:mt-10">
           <div className="flex flex-col rounded-[8px] border border-black">
-            <div className="grid grid-cols-2 items-center justify-center gap-4">
+            <div className="grid grid-cols-2 items-center justify-center gap-2 md:gap-4">
               <p className="trim bg-gradient-to-b from-[#EC7F58] via-[#EC7B56] to-[#EB7753] bg-clip-text py-4 text-right text-[96px] text-transparent">
                 $59
               </p>
-              <p className="trim text-left text-[24px] leading-[1] tracking-wide">
+              <p className="trim text-left text-[20px] leading-[1] tracking-wide md:text-[24px]">
                 OFF <br />
                 <span className="text-[#AE9D8A]">
                   FIRST WINDOW <br /> CLEANING
