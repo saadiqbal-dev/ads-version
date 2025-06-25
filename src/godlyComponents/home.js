@@ -15,6 +15,8 @@ import TeamGallery from "./teamGallery";
 import { useGodlyContext } from "@/context/godlyContext";
 
 import { citiesMap } from "./header/CitiesPopup";
+import SingleReview from "./singleReview";
+import Faq from "./faq";
 
 export default function GodlyHome({ city }) {
   const { setCity } = useGodlyContext();
@@ -29,15 +31,17 @@ export default function GodlyHome({ city }) {
   return (
     <WebsiteLayout>
       <Hero />
+      <SingleReview />
       <FourStepProcess />
-      <Services />
+      <TeamGallery />
+      {/* <Services /> */}
       <Promise />
       <Gurantee />
-      <TeamGallery />
       <Testimonials />
       <HowItWorks />
-      <Savings />
-      <Location />
+      <Faq />
+      {/* <Savings /> */}
+      {/* <Location /> */}
     </WebsiteLayout>
   );
 }

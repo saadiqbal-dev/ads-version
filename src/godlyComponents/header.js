@@ -3,15 +3,10 @@ import React, { useState, useEffect } from "react";
 
 // Import the new components (adjust paths if necessary)
 import Logo from "./header/Logo";
-import MobileMenuToggle from "./header/MobileMenuToggle";
-import DesktopNav from "./header/DesktopNav";
-import MobileNav from "./header/MobileNav";
-import CitySelector from "./header/CitySelector";
 import PhoneNumber from "./header/PhoneNumber";
 import ServicePopup from "./header/ServicePopup";
 import CitiesPopup from "./header/CitiesPopup";
 import FormPopup from "./header/FormPopup";
-import HeaderButton from "@/components/HeaderButton"; // Keep this import
 import { cn } from "@/lib/utils";
 
 // Keep data definitions or move to a separate file
@@ -127,26 +122,6 @@ const Header = () => {
     setIsClient(true);
   }, []);
 
-  // Define handlers to pass down
-  const handleServicesClick = () => {
-    setServicesOpen(true);
-    setMobileMenuOpen(false); // Close mobile menu if open
-  };
-
-  const handleCitiesClick = () => {
-    setCitiesOpen(true);
-    setMobileMenuOpen(false); // Close mobile menu if open
-  };
-
-  const handleQuoteClick = () => {
-    setFormPopupOpen(true);
-    setMobileMenuOpen(false); // Close mobile menu if open
-  };
-
-  const handleMobileLinkClick = () => {
-    setMobileMenuOpen(false);
-  };
-
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
   };
@@ -159,15 +134,18 @@ const Header = () => {
     <>
       {mobileMenuOpen && (
         <div
-          className="fixed inset-0 z-30 bg-[rgba(45,43,43,0.85)] backdrop-blur-[2px] lg:hidden" // z-30, hidden on medium screens and up
+          className="inset-0 z-30 bg-[rgba(45,43,43,0.85)] backdrop-blur-[2px] lg:hidden" // z-30, hidden on medium screens and up
           onClick={toggleMobileMenu} // Close menu when overlay is clicked
         ></div>
-      )}
-      <div
-        className="godlyheader w-full bg-[#252323] p-4 text-white lg:px-6 lg:py-0"
-        style={{ position: "fixed", top: "0", zIndex: "100" }}
-      >
-        <div className="flex w-full flex-col items-center justify-between gap-4 bg-[#252323] lg:flex-row">
+      )}{" "}
+      <div className="godlyheader w-full bg-[#252323] text-white">
+        {" "}
+        <div className="gradient-bg relative items-center justify-center !bg-[#9B4531] p-4 text-center text-sm font-semibold text-white md:text-lg">
+          <p className="relative z-10 font-light">
+            Get Spotless Windows + a FREE RainShield Treatment this June Only.
+          </p>
+        </div>
+        <div className="flex w-full flex-col items-center justify-between gap-4 bg-[#252323] p-4 lg:flex-row lg:px-6 lg:py-0">
           {/* Left side: Logo, Mobile Toggle, Desktop Nav */}
           <div
             className={cn(
@@ -176,44 +154,24 @@ const Header = () => {
             )}
           >
             <Logo />
-            <MobileMenuToggle
-              isOpen={mobileMenuOpen}
-              onClick={toggleMobileMenu}
-              hidden={mobileMenuOpen}
-            />
-            <DesktopNav onServicesClick={handleServicesClick} />
+            <span className="lg:hidden">
+              <PhoneNumber />
+            </span>
           </div>
-
-          {/* Mobile Navigation */}
-          {mobileMenuOpen && (
-            <>
-              <MobileNav
-                onServicesClick={handleServicesClick}
-                onCitiesClick={handleCitiesClick}
-                onQuoteClick={handleQuoteClick}
-                onLinkClick={handleMobileLinkClick}
-              />
-              <MobileMenuToggle
-                isOpen={mobileMenuOpen}
-                onClick={toggleMobileMenu}
-              />
-            </>
-          )}
 
           {/* Right side: Desktop Contact Info & Quote Button */}
           <div className="hidden items-center lg:flex lg:gap-5">
             <div className="flex items-center gap-1">
               {/* Use CitySelector component */}
-              <CitySelector onClick={handleCitiesClick} />
+              {/* <CitySelector onClick={handleCitiesClick} /> */}
               {/* Use PhoneNumber component */}
               <PhoneNumber />
             </div>
             {/* Use HeaderButton component */}
-            <HeaderButton onClick={handleQuoteClick} />
+            {/* <HeaderButton onClick={handleQuoteClick} /> */}
           </div>
         </div>
       </div>
-
       {/* Render Popups */}
       <ServicePopup
         open={servicesOpen}

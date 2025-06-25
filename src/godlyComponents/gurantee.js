@@ -62,9 +62,8 @@ const Gurantee = () => {
                     We respect your time
                   </h4>
                   <h5 className="font-['satoshi-regular'] text-2xl">
-                    Time is valuable and should never be taken for granted, we
-                    show up on time and maintain steady communication from
-                    booking to completion.
+                    Your time matters. We show up when we say we will — and keep
+                    you in the loop from booking to final walkthrough.
                   </h5>
                 </div>
                 <Image src={barcode} alt="barcode" className="h-full w-1/5" />
@@ -94,8 +93,8 @@ const Gurantee = () => {
                     We keep our word
                   </h4>
                   <h5 className="font-['satoshi-regular'] text-2xl font-light">
-                    If we say we&apos;re going to do something, we do it. Plain
-                    and simple.
+                    If we say it, we mean it. No excuses, no surprises — just
+                    old-school follow-through.
                   </h5>
                 </div>
 
@@ -126,8 +125,8 @@ const Gurantee = () => {
                     We treat properties like our own
                   </h4>
                   <h5 className="card-description font-['satoshi-regular'] text-2xl font-light">
-                    We respect every inch of your property, and strive to leave
-                    it better than we found it.
+                    We treat your home like it’s ours — with care, respect, and
+                    attention to detail you can feel.
                   </h5>
                 </div>
 

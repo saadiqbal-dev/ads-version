@@ -10,18 +10,18 @@ import SectionButton from "@/components/sectionButton";
 import { cn } from "@/lib/utils";
 
 const questions = [
-  "How often should I seal coat my driveway?",
-  "Can you seal coat commercial parking lots?",
-  "How long does the seal coating process take?",
-  "Will seal coating fix cracks in my driveway?",
-  "How soon can I drive on my driveway after seal coating?",
+  "Do I need to be home for the cleaning?",
+  "What if it rains after you clean my windows?",
+  "How much does it cost?",
+  "Are you licensed and insured?",
+  "Do you clean interior windows too?",
 ];
 const answers = [
-  "We recommend seal coating every 2-3 years to maintain protection and appearance.",
-  "Yes! We provide seal coating for both residential and commercial properties.",
-  "Most jobs are completed in 4-6 hours, but drying time can take up to 24 hours before full use.",
-  "Yes, it will fix cracks in your driveway. However, it may not be the best solution for all types of cracks.",
-  "You can drive on your driveway immediately after seal coating.",
+  "Not at all. As long as we have access to the exterior and a water source, we can handle the job while you're away. We’ll send you a text when we arrive and photos when we’re done.",
+  "Some of our plans include our 7-Day Sparkle Guarantee — which means if it rains within a week, we’ll come back and touch up the windows at no extra cost. If you're not on one of those plans yet, we’ll walk you through your options during the quote.",
+  "Pricing is based on the amount of glass and the size of your property. We offer a variety of discounts, including seasonal promos and multi-service bundles, so you’ll always get the best value. Every quote is clear, customized, and 100% free.",
+  "Yes — we carry full liability insurance up to $2 million and workers’ comp. All of our technicians are background-checked, trained, and committed to treating your home with respect.",
+  "Yes! Interior cleaning can be added to any exterior job, and it’s discounted when bundled. We’ll confirm what you need before your service and only clean what you request.",
 ];
 
 const Faq = () => {
@@ -85,7 +85,7 @@ const Faq = () => {
           </Accordion>
         </div>
       </div>
-      <SectionButton>Get a Free Estimate</SectionButton>
+      <SectionButton>Get My Free Quote</SectionButton>
     </div>
   );
 };

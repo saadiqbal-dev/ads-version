@@ -40,7 +40,7 @@ const Location = () => {
           className="h-full max-w-[345px] md:max-w-[1140px]"
         />
 
-        <SectionButton>Get a Free Estimate</SectionButton>
+        <SectionButton>Get My Free Quote</SectionButton>
       </div>
     </div>
   );

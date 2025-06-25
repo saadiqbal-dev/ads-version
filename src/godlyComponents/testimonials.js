@@ -13,7 +13,7 @@ import {
 
 const Testimonials = () => {
   return (
-    <div className="paper-bg-16 bg-[#262424]">
+    <div className="paper-bg-16 mt-20 bg-[#262424] md:mt-0">
       <div className="mx-auto flex max-w-[1440px] flex-col items-center gap-20 px-6 pb-[120px] md:px-6 md:py-25">
         <div className="flex w-full flex-col gap-[63px] md:relative md:flex-row md:items-end md:justify-center">
           <div className="flex flex-col items-center justify-center gap-6 md:gap-9">
@@ -40,12 +40,12 @@ const Testimonials = () => {
               </span>
             </h2>
           </div>
-          <Link
+          {/* <Link
             className="flex justify-end text-base md:absolute md:right-0 md:block md:text-2xl"
             href="https://g.co/kgs/uCqteyx"
           >
             <span className="text-white underline">SEE MORE REVIEWS</span>
-          </Link>
+          </Link> */}
         </div>
         <div className="max-w-screen-[1920px] mx-auto w-full pb-20 md:pb-40">
           <Carousel

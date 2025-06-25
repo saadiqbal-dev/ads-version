@@ -38,8 +38,8 @@ const FourStepProcess = () => {
           </defs>
         </svg>
       ),
-      title: "Scrub",
-      text: "We scrub every inch of the glass with precision to break down stubborn grime, smudges, and buildup.",
+      title: "Resedential",
+      text: "Wash away dirt, mold, pollen, and buildup from driveways, windows, and roofs — we’ll make your home look like new.",
     },
     {
       number: "02",
@@ -57,8 +57,8 @@ const FourStepProcess = () => {
           />
         </svg>
       ),
-      title: "Squeegee",
-      text: "We use pro-grade squeegees to remove all water, dirt, and grime leaving a streak-free crystal-clear finish.",
+      title: "Commercial",
+      text: "Keep your storefront or office exterior spotless and professional — with flexible scheduling that works around your hours.",
     },
     {
       number: "03",
@@ -79,8 +79,8 @@ const FourStepProcess = () => {
           />
         </svg>
       ),
-      title: "Detail",
-      text: "We finish with a sharp eye, wiping edges and frames for a flawless, polished look from every angle.",
+      title: "Post-Construction",
+      text: "Safely remove construction dust, paint overspray, and debris from windows and surfaces — no scratches, just shine.",
     },
     {
       number: "04",
@@ -98,8 +98,8 @@ const FourStepProcess = () => {
           />
         </svg>
       ),
-      title: "RainShield Tech",
-      text: "We apply own unique invisible technology that repels water and rain, keeping your windows cleaner for longer.",
+      title: "Maintenance Package",
+      text: "Quarterly or bi-annual cleanings to protect your property, keep things pristine, and avoid costly buildup.",
     },
   ];
 
@@ -125,11 +125,11 @@ const FourStepProcess = () => {
           <div className="relative flex flex-col items-center justify-center gap-0">
             <h4
               className="trim text-grain !bg-white text-[32px] tracking-[3.84px] md:text-[64px]"
-              data-text="OUR 4 STEP PROCESS"
+              data-text="Services"
             >
-              OUR 4 STEP PROCESS
+              Services
             </h4>
-            <h4 className="with-text-fourstepprocess trim z-10 text-center!">
+            {/* <h4 className="with-text-fourstepprocess trim z-10 text-center!">
               With
             </h4>
             <h4
@@ -137,7 +137,7 @@ const FourStepProcess = () => {
               data-text="RAINSHIELD TECH"
             >
               RAINSHIELD TECH
-            </h4>
+            </h4> */}
           </div>
         </div>
 

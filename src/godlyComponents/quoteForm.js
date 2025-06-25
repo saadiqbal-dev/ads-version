@@ -182,8 +182,8 @@ export default function QuoteForm({ isDialog }) {
           isDialog ? "md:overflow-y-auto xl:overflow-y-auto" : "",
         )}
       >
-        <div className="paper-bg-14 relative z-20 grid grid-cols-2 items-center justify-between rounded-t-[10px] bg-[#AB8459] px-[27px] py-[25px] md:flex md:h-[100px] md:px-10 md:py-6 xl:flex xl:h-[128px] xl:px-12 xl:py-8">
-          <h2
+        <div className="paper-bg-14 relative z-20 grid grid-cols-1 items-center justify-between rounded-t-[10px] bg-[#AB8459] px-[27px] py-[25px] md:flex md:h-[100px] md:px-10 md:py-6 xl:flex xl:h-[128px] xl:px-12 xl:py-8">
+          {/* <h2
             className={cn(
               "trim text-[24px] leading-6 font-normal tracking-[1.2px] text-[#2D2B2B] md:min-w-[120px] md:text-4xl xl:min-w-[137px] xl:text-5xl xl:text-[40px]",
               isDialog
@@ -192,23 +192,22 @@ export default function QuoteForm({ isDialog }) {
             )}
           >
             LET US CALL <br className="md:hidden" /> YOU!
-          </h2>
+          </h2> */}
           <p
             className={cn(
-              "text-right font-['satoshi-regular'] text-[13px] font-medium text-[#2D2B2B] md:max-w-[320px] md:text-lg xl:max-w-[367px] xl:text-2xl",
+              "font-['satoshi-regular'] text-[13px] font-medium text-[#2D2B2B] md:text-lg xl:text-2xl",
               isDialog
                 ? "text-[13px] md:text-base xl:text-lg xl:text-[20px]"
                 : "",
             )}
           >
-            Receive a call within 30 minutes
-            <br className="hidden md:block xl:block" /> during normal business
-            hours.
+            We’ll call you within 30 minutes — no pressure, just a friendly
+            quote.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 gap-4 px-12 py-8 md:grid-cols-6 md:grid-rows-2 xl:grid-cols-12">
-          <div className="md:col-span-2 xl:col-span-4">
+        <div className="grid grid-cols-1 gap-4 px-12 py-8 md:grid-cols-2 md:grid-rows-2 xl:grid-cols-2">
+          <div className="md:col-span-1 xl:col-span-1">
             <label className="mb-1 block font-sans text-sm font-normal text-[#312E2C] md:text-sm xl:text-base">
               Name
             </label>
@@ -221,7 +220,7 @@ export default function QuoteForm({ isDialog }) {
               required
             />
           </div>
-          <div className="md:col-span-2 xl:col-span-4">
+          <div className="md:col-span-1 xl:col-span-1">
             <label className="mb-1 block font-sans text-sm font-normal text-[#312E2C] md:text-sm xl:text-base">
               Email
             </label>
@@ -235,7 +234,7 @@ export default function QuoteForm({ isDialog }) {
               required
             />
           </div>
-          <div className="md:col-span-2 xl:col-span-4">
+          <div className="md:col-span-1 xl:col-span-1">
             <label className="mb-1 block font-sans text-sm font-normal text-[#312E2C] md:text-sm xl:text-base">
               Phone Number
             </label>
@@ -248,7 +247,7 @@ export default function QuoteForm({ isDialog }) {
               required
             />
           </div>
-          <div
+          {/* <div
             className={cn(
               "relative md:col-span-3 xl:col-span-5",
               isDialog ? "md:col-span-3" : "",
@@ -304,9 +303,9 @@ export default function QuoteForm({ isDialog }) {
                 ))}
               </div>
             )}
-          </div>
+          </div> */}
 
-          <div
+          {/* <div
             className={cn(
               "flex flex-col justify-between md:col-span-2 xl:col-span-4",
               isDialog ? "md:col-span-2" : "",
@@ -325,7 +324,6 @@ export default function QuoteForm({ isDialog }) {
                       Choose date
                     </span>
                   )}
-                  {/* <CalendarIcon className="inline ml-2 h-4 w-4 text-gray-500" /> */}
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="20"
@@ -370,10 +368,10 @@ export default function QuoteForm({ isDialog }) {
                 />
               </PopoverContent>
             </Popover>
-          </div>
+          </div> */}
 
-          <div className="md:col-span-1 xl:col-span-2">
-            <label className="mb-1 block w-full pb-3 font-sans text-sm font-normal text-[#312E2C] md:text-sm xl:text-base">
+          <div className="md:col-span-1 xl:col-span-1">
+            <label className="mb-1 block w-full font-sans text-sm font-normal text-[#312E2C] md:text-sm xl:text-base">
               Zip Code
             </label>
             <Input
@@ -415,7 +413,7 @@ export default function QuoteForm({ isDialog }) {
               disabled={isSubmitting}
               className={isDialog && "estimate-button"}
             >
-              {isSubmitting ? "Submitting..." : "Request a Quote"}
+              {isSubmitting ? "Submitting..." : "Get My Free Quote"}
             </QuoteButton>
           </div>
         </div>

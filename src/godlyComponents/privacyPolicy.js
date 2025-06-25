@@ -46,7 +46,7 @@ const PrivacyPolicy = () => {
               <li className="list-disc">
                 <strong>Personal Information</strong> – such as your name, email
                 address, phone number, and service address when you contact us,
-                request a quote, or schedule services.
+                Get My Free Quote, or schedule services.
               </li>
               <li className="list-disc">
                 <strong>Usage Data</strong> – including your IP address, browser

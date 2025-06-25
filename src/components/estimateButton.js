@@ -2,7 +2,7 @@ export default function EstimateButton() {
   return (
     <button className="estimate-button flex items-center gap-[10px]">
       <span className="-mt-1 font-['marlton'] text-2xl text-[#FDE4C8] bg-blend-difference">
-        GET A FREE ESTIMATE
+        Get My Free Quote
       </span>
       <svg
         xmlns="http://www.w3.org/2000/svg"

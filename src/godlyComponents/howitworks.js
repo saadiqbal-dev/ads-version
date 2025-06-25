@@ -12,19 +12,19 @@ const HowItWorks = () => {
       number: "01",
       icon: <Image src={img1} alt="scrub" className="fourstepicon" />,
       title: "CALL US",
-      text: "Call us or get a quote to get your free estimate and schedule your service",
+      text: "Reach out for a free quote — we’ll get you scheduled in minutes.",
     },
     {
       number: "02",
       icon: <Image src={img2} alt="squeegee" className="fourstepicon" />,
       title: "COUNT ON US",
-      text: "We show up exactly as scheduled, honoring both our word and your time.",
+      text: "We show up on time — no ghosting, no excuses, just real reliability.",
     },
     {
       number: "03",
       icon: <Image src={img3} alt="detail" className="fourstepicon" />,
       title: "DONE RIGHT",
-      text: "We deliver honest, quality work with a smile and won’t leave until you’re satisfied.",
+      text: "We get it right the first time — and we don’t leave until you’re smiling.",
     },
   ];
 
@@ -71,7 +71,7 @@ const HowItWorks = () => {
           ))}
         </div>
       </div>
-      <SectionButton>Get a Free Estimate</SectionButton>
+      <SectionButton>Get My Free Quote</SectionButton>
     </div>
   );
 };

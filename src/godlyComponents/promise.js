@@ -29,24 +29,19 @@ const steps = [
     number: "01",
     icon: img1,
     title: "QUICK ESTIMATES",
-    text: (
-      <>
-        We offer free estimates within{" "}
-        <span className="font-bold">24 hours</span> for all jobs.
-      </>
-    ),
+    text: "Fast, free quotes — usually within 24 hours",
   },
   {
     number: "02",
     icon: img2,
     title: "FULLY INSURED",
-    text: "No need to worry, we are insured up to $2M plus workers comp.",
+    text: "We’re fully insured with $2M in coverage — including workers’ comp.",
   },
   {
     number: "03",
     icon: img3,
     title: "BUILT ON INTEGRITY",
-    text: "If you’re ever dissatisfied with our service, we won’t stop until we’ve made it right.",
+    text: "If something’s not right, we make it right — no excuses, no runaround.",
   },
 ];
 
@@ -64,6 +59,14 @@ const Promise = () => {
       id="promise"
       className="paper-bg-16 flex flex-col items-center justify-items-center gap-10 bg-[#ede0d2] px-[30px] pt-[50px] pb-[100px] md:px-[86px] md:py-[150px]"
     >
+      <div>
+        <h4
+          className="text-grain trim !bg-[#191717] text-center text-4xl font-normal tracking-wide md:text-[64px]"
+          data-text="What It Really Looks Like When We Show Up."
+        >
+          What It Really Looks Like When We Show Up.
+        </h4>
+      </div>
       <div
         className="relative flex h-[200px] w-[758px] scale-50 -rotate-2 flex-col items-center justify-center bg-cover bg-center bg-no-repeat md:h-[210px] md:scale-100"
         style={{
@@ -89,22 +92,22 @@ const Promise = () => {
       <div className="flex flex-col items-center justify-center gap-4 py-10 md:gap-10">
         <h4
           className="text-grain trim !bg-[#191717] text-center text-4xl font-normal tracking-wide md:text-[64px]"
-          data-text="Delivering"
+          data-text="Services"
         >
-          Delivering
+          Services
         </h4>
         <h4 className="trim text-center text-4xl font-normal tracking-wide md:-mt-6 md:text-[64px]">
           <span
             className="md:text-grain trim relative text-[#61503E] underline"
-            data-text="Trustworthy"
+            data-text="The Way"
           >
-            Trustworthy
+            The Way
           </span>{" "}
           <span
             className="text-grain trim !bg-[#191717] text-4xl md:text-[64px]"
-            data-text="Service"
+            data-text="It Should be"
           >
-            Service
+            It Should be
           </span>
         </h4>
       </div>
@@ -166,7 +169,7 @@ const Promise = () => {
           );
         })}
       </div>
-      <SectionButton>Get a Free Estimate</SectionButton>
+      <SectionButton>Get My Free Quote</SectionButton>
       {/* <EstimateButton /> */}
     </div>
   );
@@ -284,15 +287,14 @@ function Story() {
             fontFamily: "var(--font-inter)",
           }}
         >
-          Godly is founded by{" "}
+          Godly was founded by{" "}
           <span className="bg-[#2D2B2B] px-1 text-[#F3CA9E]">
             Perfectionist
           </span>
-          looking to bridge the gaps between honest blue-collar work, modern
+          who blend honest blue-collar work with modern craftsmanship — all at
           <span className="bg-[#2D2B2B] px-1 text-[#F3CA9E]">
-            Craftsmanship
+            a fair price.
           </span>
-          , and a fair price.
         </p>
         <p
           className="text-justify text-sm tracking-wide text-[#A4A4A4] md:text-base"
@@ -300,12 +302,8 @@ function Story() {
             fontFamily: "var(--font-inter)",
           }}
         >
-          We want to ‘reverse time’ back to when you
-          <span className="bg-[#2D2B2B] px-1 text-[#F3CA9E]">Trusted</span> the
-          people working on your home or Business. Back to when the standard was
-          to do exactly what you said you&apos;d do, rather than using it as
-          merely a
-          <span className="bg-[#2D2B2B] px-1 text-[#F3CA9E]">Guideline </span>.
+          We’re bringing back a time when a handshake meant something — when
+          people did what they said they would, and did it right the first time.
         </p>
       </div>
     </div>

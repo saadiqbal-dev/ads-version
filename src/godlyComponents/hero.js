@@ -10,7 +10,7 @@ const Hero = () => {
 
   return (
     <div className="relative overflow-x-clip bg-[#1F1D1D]">
-      <div className="absolute top-[70px] left-0 h-[450px] w-full bg-[url('/assets/heroBanner.jpg')] bg-cover bg-center bg-no-repeat md:top-[20px] md:h-[700px]">
+      <div className="absolute top-[0px] left-0 h-[450px] w-full bg-[url('/assets/heroBanner.jpg')] bg-cover bg-center bg-no-repeat md:top-[0px] md:h-[700px]">
         <div className="absolute top-0 left-0 h-full w-full bg-gradient-to-b from-[#1F1D1D]/0 to-[#1F1D1D]"></div>
       </div>
 
@@ -28,11 +28,13 @@ const Hero = () => {
               <Star className="h-[13px] w-[13px] md:size-3 xl:h-[17px] xl:w-[18px]" />
             </div>
           </div>
-          <h1 className="sr-only">
-            {generateHomeH1()}
-          </h1>
-          <div className="flex flex-wrap items-center gap-4 xl:gap-8" role="heading" aria-level="1">
-            <span className="flex flex-wrap items-center gap-2">
+          <h1 className="sr-only">{generateHomeH1()}</h1>
+          <div
+            className="flex flex-wrap items-center gap-4 xl:gap-8"
+            role="heading"
+            aria-level="1"
+          >
+            {/* <span className="flex flex-wrap items-center gap-2">
               <span className="font-marlton trim shrink-0 items-center gap-2 text-[32px] font-normal tracking-[3px] text-white md:text-4xl md:tracking-[6.584px] xl:text-[64px] 2xl:text-[73.161px]">
                 Window cleaning
               </span>
@@ -49,11 +51,14 @@ const Hero = () => {
             </span>
             <span className="font-marlton trim shrink-0 items-center gap-2 text-4xl font-normal tracking-[3px] text-white md:block md:tracking-[7.4] xl:text-[64px] 2xl:text-[73.161px]">
               {city}
-            </span>
+            </span> */}
+            <h3 className="font-marlton trim w-full shrink-0 items-center gap-2 text-[32px] font-normal tracking-[3px] text-white md:text-4xl md:tracking-[6.584px] xl:text-[64px] 2xl:text-[73.161px]">
+              South Florida’s #1 Trusted Window Cleaning – Backed by Our 100%
+              Satisfaction Guarantee
+            </h3>
           </div>
           <p className="font-['satoshi-regular'] text-sm font-medium text-white md:text-base xl:text-xl">
-            we specialize in window washing, home washing, pressure washing,
-            paver sealing and more.
+            Get Spotless Windows + a FREE RainShield Treatment this June Only.
           </p>
         </div>
         <QuoteForm />
