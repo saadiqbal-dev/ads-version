@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import {
   Dialog,
@@ -29,11 +29,61 @@ const TimerBox = ({ value, label }) => {
 };
 
 export function PopupModal() {
+  const [open, setIsOpen] = useState(false);
+  const [timeLeft, setTimeLeft] = useState({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
+  });
+  const [isExpired, setIsExpired] = useState(false);
+
+  useEffect(() => {
+    const targetDate = new Date("2025-07-01T00:00:00");
+
+    const updateTimer = () => {
+      const now = new Date();
+      const difference = targetDate - now;
+
+      if (difference <= 0) {
+        setIsExpired(true);
+        setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+        return;
+      }
+
+      const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+      const hours = Math.floor(
+        (difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
+      );
+      const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+      setTimeLeft({ days, hours, minutes, seconds });
+    };
+
+    updateTimer(); // Initial call
+    const interval = setInterval(updateTimer, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    if (isExpired) {
+      return; // Don't show popup if expired
+    }
+
+    const timeout = setTimeout(() => {
+      setIsOpen(true);
+    }, 7000);
+
+    return () => clearTimeout(timeout);
+  }, [isExpired]);
+
   return (
-    <Dialog defaultOpen>
+    <Dialog open={open} onOpenChange={setIsOpen}>
       <DialogContent
-        className="flex aspect-[1811/2711] min-h-[675px] max-w-[440px] flex-col border-0 bg-transparent bg-[url(/assets/UnionMobile.png)] bg-contain bg-center bg-no-repeat px-16 shadow-none md:max-w-[440px] md:bg-[url(/assets/Union.png)] md:px-8"
-        hideCloseButton
+        closeClass="md:top-6! md:right-4! top-6! right-10!"
+        className="flex aspect-[1811/2711] min-h-[675px] max-w-[440px] scale-90 flex-col border-0 bg-transparent bg-[url(/assets/UnionMobile.png)] bg-contain bg-center bg-no-repeat px-16 shadow-none md:max-w-[440px] md:scale-100 md:bg-[url(/assets/Union.png)] md:px-8"
       >
         <DialogHeader className="sr-only" />
         <DialogDescription className="sr-only" />
@@ -45,19 +95,31 @@ export function PopupModal() {
             $59 Off
           </span>
         </h2>
-        <p className="mx-auto w-[272px] text-center font-[Satoshi-medium] text-sm font-medium tracking-[0.96px] md:w-[352px] md:text-base">
+        <p className="mx-auto max-w-[272px] text-center font-[Satoshi-medium] text-sm font-medium tracking-[0.96px] md:max-w-[352px] md:text-base">
           We’re opening up limited spots for first-time clients this June.
         </p>
 
         <div className="mt-3 mb-2 flex flex-col gap-[24px]">
-          <p className="w-[352px] text-center font-[Satoshi-medium] text-base font-medium tracking-[0.96px]">
+          <p className="max-w-[352px] text-center font-[Satoshi-medium] text-base font-medium tracking-[0.96px]">
             ⏳ Offer ends in:
           </p>
           <div className="flex items-center justify-center gap-5">
-            <TimerBox label={"DAYS"} value={"07"} />
-            <TimerBox label={"DAYS"} value={"07"} />
-            <TimerBox label={"DAYS"} value={"07"} />
-            <TimerBox label={"DAYS"} value={"07"} />
+            <TimerBox
+              label={"DAYS"}
+              value={timeLeft.days.toString().padStart(2, "0")}
+            />
+            <TimerBox
+              label={"HOURS"}
+              value={timeLeft.hours.toString().padStart(2, "0")}
+            />
+            <TimerBox
+              label={"MINUTES"}
+              value={timeLeft.minutes.toString().padStart(2, "0")}
+            />
+            <TimerBox
+              label={"SECONDS"}
+              value={timeLeft.seconds.toString().padStart(2, "0")}
+            />
           </div>
         </div>
 
@@ -79,7 +141,7 @@ export function PopupModal() {
             <div className="h-[1px] w-full bg-[#CCCACA]" />
             <p className="px-[6px] py-[15px] text-center font-[Satoshi-medium] text-sm font-medium tracking-[0.96px] md:text-base">
               Just in time for summer entertaining. <br />
-              Expires June 30th. Countdown’s ticking.
+              Expires July 1st. Countdown&apos;s ticking.
             </p>
           </div>
         </div>
