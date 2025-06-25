@@ -82,7 +82,7 @@ export function PopupModal() {
   return (
     <Dialog open={open} onOpenChange={setIsOpen}>
       <DialogContent
-        closeClass="md:top-6! md:right-4! top-6! right-10!"
+        closeClass="md:top-0! md:-right-4! -top-0.5! right-4!"
         className="flex aspect-[1811/2711] min-h-[675px] max-w-[440px] scale-90 flex-col border-0 bg-transparent bg-[url(/assets/UnionMobile.png)] bg-contain bg-center bg-no-repeat px-16 shadow-none md:max-w-[440px] md:scale-100 md:bg-[url(/assets/Union.png)] md:px-8"
       >
         <DialogHeader className="sr-only" />
