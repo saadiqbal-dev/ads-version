@@ -17,6 +17,7 @@ import { useGodlyContext } from "@/context/godlyContext";
 import { citiesMap } from "./header/CitiesPopup";
 import SingleReview from "./singleReview";
 import Faq from "./faq";
+import { PopupModal } from "@/components/popup-modal";
 
 export default function GodlyHome({ city }) {
   const { setCity } = useGodlyContext();
@@ -42,6 +43,7 @@ export default function GodlyHome({ city }) {
       <Faq />
       {/* <Savings /> */}
       {/* <Location /> */}
+      <PopupModal />
     </WebsiteLayout>
   );
 }
