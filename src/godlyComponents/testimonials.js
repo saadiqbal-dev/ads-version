@@ -1,7 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 import React from "react";
-import Link from "next/link";
 
 import {
   Carousel,
@@ -40,12 +39,6 @@ const Testimonials = () => {
               </span>
             </h2>
           </div>
-          {/* <Link
-            className="flex justify-end text-base md:absolute md:right-0 md:block md:text-2xl"
-            href="https://g.co/kgs/uCqteyx"
-          >
-            <span className="text-white underline">SEE MORE REVIEWS</span>
-          </Link> */}
         </div>
         <div className="max-w-screen-[1920px] mx-auto w-full pb-20 md:pb-40">
           <Carousel
@@ -114,7 +107,7 @@ const reviews = [
     author: "Lilly Thomas",
     location: "Lighthouse Point, Fl",
     content:
-      "Extremely pleased with the results of my windows. They were very professional and informative. I highly recommend Moses Godly Windows!",
+      "Amazing Job! Moses is very conscientious and always provides a top quality service.",
     image: "/assets/lily.png",
   },
   {

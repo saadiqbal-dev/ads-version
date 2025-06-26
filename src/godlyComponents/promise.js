@@ -1,7 +1,7 @@
 "use client";
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import "@/styles/fourstepprocess.css";
 import Image from "next/image";
 
@@ -15,14 +15,13 @@ import img3 from "@/assets/eagle.webp";
 import SectionButton from "@/components/sectionButton";
 import Autoplay from "embla-carousel-autoplay";
 
+import { cn } from "@/lib/utils";
+
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  // CarouselNext,
-  // CarouselPrevious,
 } from "@/components/ui/carousel";
-// import EstimateButton from "@/components/estimateButton";
 
 const steps = [
   {
@@ -54,18 +53,85 @@ const Promise = () => {
     setActiveCard((prev) => (prev === index ? null : index));
   };
 
+  const [isPlaying, setIsPlaying] = useState(false);
+  const videoRef = useRef(null);
+
+  const handleVideoClick = () => {
+    if (videoRef.current) {
+      if (videoRef.current.paused) {
+        videoRef.current.play();
+      } else {
+        videoRef.current.pause();
+      }
+    }
+  };
+
+  // Add event listeners for video play/pause events
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const handlePlay = () => setIsPlaying(true);
+    const handlePause = () => setIsPlaying(false);
+    const handleEnded = () => setIsPlaying(false);
+
+    video.addEventListener("play", handlePlay);
+    video.addEventListener("pause", handlePause);
+    video.addEventListener("ended", handleEnded);
+
+    return () => {
+      video.removeEventListener("play", handlePlay);
+      video.removeEventListener("pause", handlePause);
+      video.removeEventListener("ended", handleEnded);
+    };
+  }, []);
+
   return (
     <div
       id="promise"
       className="paper-bg-16 flex flex-col items-center justify-items-center gap-10 bg-[#ede0d2] px-[30px] pt-[50px] pb-[100px] md:px-[86px] md:py-[150px]"
     >
-      <div>
+      <div className="mb-[150px] flex flex-col items-center gap-[70px]">
         <h4
           className="text-grain trim !bg-[#191717] text-center text-4xl font-normal tracking-wide md:text-[64px]"
           data-text="What It Really Looks Like When We Show Up."
         >
           What It Really Looks Like When We Show Up.
         </h4>
+        <div className="paper-bg-8 flex w-full max-w-fit flex-col items-center justify-center gap-2 rounded-[2.395px] border-[1.2px] border-[rgba(106,100,100,0.12)] bg-white p-[7.2px] pb-[14.37px] md:mx-auto">
+          <div className="relative w-full max-w-[400px]">
+            <video
+              className="h-auto w-full rounded-sm"
+              ref={videoRef}
+              playsInline
+              preload="metadata"
+            >
+              <source src="/assets/reel.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+            <button
+              onClick={handleVideoClick}
+              aria-label={isPlaying ? "Pause video" : "Play video"}
+              className={cn(
+                "group absolute inset-0 z-10 flex items-center justify-center transition-all duration-300",
+                !isPlaying ? "bg-black/40" : "bg-transparent hover:bg-black/20",
+              )}
+            >
+              <Image
+                src="/assets/play-button.png"
+                alt=""
+                width={64}
+                height={64}
+                className={cn(
+                  "size-16 object-contain transition-all duration-300",
+                  isPlaying
+                    ? "scale-75 opacity-0 group-hover:scale-100 group-hover:opacity-80"
+                    : "scale-100 opacity-100 hover:scale-110",
+                )}
+              />
+            </button>
+          </div>
+        </div>
       </div>
       <div
         className="relative flex h-[200px] w-[758px] scale-50 -rotate-2 flex-col items-center justify-center bg-cover bg-center bg-no-repeat md:h-[210px] md:scale-100"
@@ -73,11 +139,11 @@ const Promise = () => {
           backgroundImage: `url(${ticketBg.src})`,
         }}
       >
-        <div className="flex -translate-y-7 flex-col items-center gap-4">
+        <div className="flex -translate-y-11 flex-col items-center gap-4">
           <h2 className="text-trim -rotate-2 text-[64px] font-normal tracking-[5.76px] text-[#191717]">
             old fashioned Values
           </h2>
-          <h4 className="absolute top-3/5 -mt-4 -rotate-2 text-3xl font-normal text-[#191717]">
+          <h4 className="absolute top-3/5 -mt-0 -rotate-2 text-3xl font-normal text-[#191717]">
             <span className="text-[32px] underline">UNRIVALED</span>{" "}
             <span
               className="text-trim quality-text font-['luminaire-script'] text-[80px] text-[#B0906E]"

@@ -8,6 +8,34 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
+
+const reviews = [
+  {
+    image: "/assets/team.png",
+    text: "Unbelievable dedication and absolute pride for all that they do.",
+    name: "VIRGINIA C",
+    location: "Weston, Fl",
+  },
+  {
+    image: "/assets/review-2.png",
+    text: "They are the best company I've used for window washing. Believe me, I've tried three others before them.",
+    name: "Connor K",
+    location: "Ft. Laud",
+  },
+  {
+    image: "/assets/daniela.png",
+    text: "Can't say enough great things about Godly windows. 4th time using them, and they always do a wonderful job.",
+    name: "Daniela D",
+    location: "Boca Raton",
+  },
+  {
+    image: "/assets/david.png",
+    text: "Moses and his team were great! Made the windows look like new again.",
+    name: "David Seltzer",
+    location: "Esq Ft. Lauderdale",
+  },
+];
 
 /* eslint-disable @next/next/no-img-element */
 const SingleReview = () => {
@@ -60,9 +88,14 @@ const SingleReview = () => {
         opts={{
           loop: true,
         }}
+        plugins={[
+          Autoplay({
+            delay: 5000,
+          }),
+        ]}
       >
         <CarouselContent>
-          {Array.from({ length: 3 }).map((_, index) => (
+          {reviews.map((item, index) => (
             <CarouselItem key={index}>
               <div className="relative flex flex-col gap-0">
                 <p className="trim absolute -top-[30px] -left-[40px] text-9xl">
@@ -73,19 +106,15 @@ const SingleReview = () => {
                     className="text-grain trim !bg-white text-[40px] tracking-[2px] md:text-[72px]"
                     data-text="The Best Windows Cleaning Company in Florida!"
                   >
-                    &quot;The Best Windows Company I&apos;ve Used!&quot;
+                    &quot;{item.text}&quot;
                   </h3>
                   <div className="absolute left-0 z-10 flex items-center justify-center rounded-full">
                     <Icons.quote />
                   </div>
-                  <div className="flex gap-2">
-                    <img
-                      src="/assets/daniela.png"
-                      alt="Daniela"
-                      className="h-8 w-8"
-                    />
-                    <p className="font-sans text-[18px] text-white">
-                      Dainela, Boca Raton
+                  <div className="flex items-center gap-2">
+                    <img src={item.image} alt={item.name} className="h-8 w-8" />
+                    <p className="trim font-sans text-[18px] text-white">
+                      {item.name}, {item.location}
                     </p>
                   </div>
                 </div>

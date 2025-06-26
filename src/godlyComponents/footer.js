@@ -46,9 +46,9 @@ const Footer = () => {
   return (
     <div className="w-full flex-col bg-[#312E2C] md:flex">
       <div className="item-center mx-auto flex w-full max-w-[1440px] flex-col items-center justify-center gap-10 px-6 py-[48px] md:px-[40px]">
-        <div className="flex max-w-[720px] flex-col items-center justify-center gap-6">
+        <div className="flex max-w-[1000px] flex-col items-center justify-center gap-6">
           <h1
-            className="text-grain trim !bg-white text-center text-[32px] leading-[72px] tracking-[4.3px] text-white md:text-[72px]"
+            className="text-grain trim my-6 !bg-white text-center text-[18px] leading-[72px] tracking-[4.3px] text-white sm:text-[28px] md:text-[64px]"
             data-text="No hard sells. No spam. Just a fast, honest quote from a local, family-owned business."
           >
             No hard sells. No spam. Just a fast, honest quote from a local,

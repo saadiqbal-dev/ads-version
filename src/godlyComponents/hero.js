@@ -8,6 +8,15 @@ import { generateHomeH1 } from "@/data/metaTitles";
 const Hero = () => {
   const { city } = useGodlyContext();
 
+  const formatCity = (city) => {
+    if (!city) return "South Florida";
+    return city
+      .toLowerCase()
+      .split(" ")
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(" ");
+  };
+
   return (
     <div className="relative overflow-x-clip bg-[#1F1D1D]">
       <div className="absolute top-[0px] left-0 h-[450px] w-full bg-[url('/assets/heroBanner.jpg')] bg-cover bg-center bg-no-repeat md:top-[0px] md:h-[700px]">
@@ -53,7 +62,7 @@ const Hero = () => {
               {city}
             </span> */}
             <h3 className="font-marlton trim w-full shrink-0 items-center gap-2 text-[32px] font-normal tracking-[3px] text-white md:text-4xl md:tracking-[6.584px] xl:text-[64px] 2xl:text-[73.161px]">
-              South Florida’s #1 Trusted Window Cleaning – Backed by Our 100%
+              {formatCity(city)}’s #1 Trusted Window Cleaning – Backed by Our 100%
               Satisfaction Guarantee
             </h3>
           </div>

@@ -91,7 +91,7 @@ export function PopupModal() {
 
         <h2 className="trim mb-2 text-center text-[32px] leading-[1] text-black">
           South Florida Summer Special –{" "}
-          <span className="bg-gradient-to-b from-[#EC7F58] via-[#EC7B56] to-[#EB7753] bg-clip-text text-transparent">
+          <span className="bg-gradient-to-b from-[#EC7F58] via-[#EC7B56] to-[#EB7753] bg-clip-text py-2 text-transparent">
             $59 Off
           </span>
         </h2>
