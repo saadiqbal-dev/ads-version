@@ -101,12 +101,15 @@ const Promise = () => {
         <div className="paper-bg-8 flex w-full max-w-fit flex-col items-center justify-center gap-2 rounded-[2.395px] border-[1.2px] border-[rgba(106,100,100,0.12)] bg-white p-[7.2px] pb-[14.37px] md:mx-auto">
           <div className="relative w-full max-w-[400px]">
             <video
-              className="h-auto w-full rounded-sm"
+              className="aspect-[9/16] h-auto w-full rounded-sm"
               ref={videoRef}
               playsInline
               preload="metadata"
             >
-              <source src="/assets/reel.mp4" type="video/mp4" />
+              <source
+                src="https://mnoycwyw8j.ufs.sh/f/XF15f1IJ6EyQmpzspUT8Vkc07QNnH6YvMdU42GhueSgt3xjp"
+                type="video/mp4"
+              />
               Your browser does not support the video tag.
             </video>
             <button
